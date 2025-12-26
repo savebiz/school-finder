@@ -29,7 +29,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
     };
 
     return (
-        <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:w-80 md:shadow-none md:border-r border-gray-200 h-screen overflow-y-auto`}>
+        <div className={`fixed inset-y-0 left-0 z-50 bg-white shadow-xl transform transition-all duration-300 ease-in-out h-screen overflow-y-auto border-r border-gray-200
+            ${isOpen ? 'translate-x-0 w-80' : '-translate-x-full w-80'} 
+            md:relative md:translate-x-0 md:shadow-none 
+            ${isOpen ? 'md:w-80 md:opacity-100' : 'md:w-0 md:opacity-0 md:overflow-hidden'}
+        `}>
             <div className="p-5">
                 <div className="flex justify-between items-center mb-6 md:hidden">
                     <h2 className="text-xl font-bold text-gray-800">Filters</h2>
