@@ -17,6 +17,10 @@ interface AppState {
     filteredSchools: School[];
     filters: FilterState;
 
+    compareList: School[];
+    toggleCompare: (school: School) => void;
+    clearCompare: () => void;
+
     setSchools: (schools: School[]) => void;
     setFilter: (key: keyof FilterState, value: any) => void;
     applyFilters: () => void;
@@ -35,8 +39,26 @@ export const useStore = create<AppState>((set, get) => ({
     schools: schoolsData as School[],
     filteredSchools: schoolsData as School[],
     filters: initialFilters,
+    compareList: [],
 
     setSchools: (schools) => set({ schools, filteredSchools: schools }),
+
+    toggleCompare: (school) => {
+        const { compareList } = get();
+        const exists = compareList.find(s => s.id === school.id);
+
+        if (exists) {
+            set({ compareList: compareList.filter(s => s.id !== school.id) });
+        } else {
+            if (compareList.length >= 3) {
+                alert("You can only compare up to 3 schools.");
+                return;
+            }
+            set({ compareList: [...compareList, school] });
+        }
+    },
+
+    clearCompare: () => set({ compareList: [] }),
 
     setFilter: (key, value) => {
         set((state) => ({

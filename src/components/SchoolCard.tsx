@@ -2,6 +2,7 @@
 import React from 'react';
 import { MapPin, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
 import { School } from '@/types';
+import CompareToggle from './CompareToggle';
 
 interface SchoolCardProps {
   school: any;
@@ -35,6 +36,11 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
         {/* Price Tag Overlay (Optional, but looks nice on image) */}
         <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white px-3 py-1 rounded-lg text-xs font-medium">
           {school.price_range}
+        </div>
+
+        {/* Compare Toggle */}
+        <div className="absolute top-3 right-3 z-10">
+          <CompareToggle school={school} />
         </div>
       </div>
 

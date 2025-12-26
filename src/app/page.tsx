@@ -8,7 +8,8 @@ import dynamic from 'next/dynamic';
 import SchoolCard from '@/components/SchoolCard';
 import SchoolCardSkeleton from '@/components/SchoolCardSkeleton';
 import FilterSidebar from '@/components/FilterSidebar';
-import FilterChips from '@/components/FilterChips';
+import FilterChips from '@/components/FilterChips'; // We use this in the drawer head or separate
+import CompareTray from '@/components/CompareTray';
 import { useStore } from '@/store/useStore';
 import { MapPin, Filter, Menu } from 'lucide-react';
 import { motion, useAnimation, PanInfo, useDragControls } from 'framer-motion';
@@ -217,6 +218,7 @@ export default function Home() {
         <MapComponent schools={filteredSchools} center={mapCenter} />
       </div>
 
+      <CompareTray />
     </main>
   );
 }
