@@ -2,15 +2,16 @@
 'use client';
 
 
-import React, { useState, useMemo, useEffect } from 'react';
 
+import React, { useState, useMemo, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import SchoolCard from '@/components/SchoolCard';
 import SchoolCardSkeleton from '@/components/SchoolCardSkeleton';
 import FilterSidebar from '@/components/FilterSidebar';
-import FilterChips from '@/components/FilterChips'; // We use this in the drawer head or separate
+import FilterChips from '@/components/FilterChips';
 import { useStore } from '@/store/useStore';
 import { MapPin, Filter, Menu } from 'lucide-react';
+import { motion, useAnimation, PanInfo } from 'framer-motion';
 
 // Dynamic import for Map to avoid SSR issues
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -22,6 +23,10 @@ export default function Home() {
   const { filteredSchools, filters, setFilter, applyFilters } = useStore();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  // Animation controls for the drawer
+  const controls = useAnimation();
+  const [drawerState, setDrawerState] = useState<'collapsed' | 'half' | 'expanded'>('half');
 
   // Simulate loading state for Skeletons demo
   useEffect(() => {
@@ -39,11 +44,8 @@ export default function Home() {
 
   // Handle Quick Filters form Chips
   const handleQuickFilter = (category: string, value: string | boolean) => {
-    // Logic to toggle filter
-    // For MVP just standard set logic similar to sidebar
     if (category === 'curriculum' || category === 'type' || category === 'infrastructure') {
       const current = filters[category as keyof typeof filters] as string[];
-      // Check if array logic applies
       if (Array.isArray(current)) {
         const updated = current.includes(value as string)
           ? current.filter(item => item !== value)
@@ -51,19 +53,48 @@ export default function Home() {
         setFilter(category as any, updated);
       }
     }
-    // Apply immediately for chips
     setTimeout(() => applyFilters(), 0);
   };
 
+  // Drag End Logic for Drawer
+  const onDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    // Determine direction and velocity
+    const offset = info.offset.y;
+    const velocity = info.velocity.y;
+
+    if (velocity < -500 || offset < -100) {
+      // Dragged Up fast or far
+      if (drawerState === 'collapsed') {
+        setDrawerState('half');
+        controls.start({ y: '50vh' });
+      } else {
+        setDrawerState('expanded');
+        controls.start({ y: '10vh' }); // Nearly full screen
+      }
+    } else if (velocity > 500 || offset > 100) {
+      // Dragged Down fast or far
+      if (drawerState === 'expanded') {
+        setDrawerState('half');
+        controls.start({ y: '50vh' });
+      } else {
+        setDrawerState('collapsed');
+        controls.start({ y: '85vh' }); // Peek
+      }
+    } else {
+      // Snap back to current state if drag wasn't significant
+      const target = drawerState === 'expanded' ? '10vh' : drawerState === 'half' ? '50vh' : '85vh';
+      controls.start({ y: target });
+    }
+  };
+
+  // Initialize drawer position
+  useEffect(() => {
+    controls.start({ y: '50vh' });
+  }, [controls]);
+
+
   return (
     <main className="flex h-screen w-screen overflow-hidden bg-gray-50 flex-col md:flex-row relative">
-
-      {/* 
-        MOBILE LAYOUT STRATEGY: 
-        1. Map is FULL SCREEN z-0.
-        2. Drawer is fixed bottom z-10.
-        3. Header is fixed top z-20.
-      */}
 
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md p-4 shadow-sm z-20 flex justify-between items-center safe-area-top">
@@ -96,7 +127,6 @@ export default function Home() {
               <Menu className="w-5 h-5 text-gray-600" />
             </button>
           </div>
-          {/* Quick Chips in Desktop Header */}
           <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
 
           <p className="text-xs text-gray-400 mt-2 font-medium uppercase tracking-wider">{filteredSchools.length} schools available</p>
@@ -128,8 +158,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Mobile Bottom Drawer / List */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 h-[50vh] bg-white rounded-t-2xl shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.1)] z-10 flex flex-col transition-transform duration-300 ease-in-out">
+      {/* Mobile Bottom Drawer / List (Draggable) */}
+      <motion.div
+        animate={controls}
+        initial={{ y: '50vh' }}
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 0 }} // Constraints handled by controls, this just enables drag physics feel
+        dragElastic={0.2}
+        onDragEnd={onDragEnd}
+        className="md:hidden fixed top-0 left-0 right-0 h-[100vh] bg-white rounded-t-2xl shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.1)] z-10 flex flex-col"
+        style={{ touchAction: 'none' }} // Prevent browser scroll interference
+      >
         {/* Handle Bar */}
         <div className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing">
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
@@ -139,8 +178,7 @@ export default function Home() {
           <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 pb-20">
-          {/* Added pb-20 to ensure last card isn't hidden behind safe area or browser chrome */}
+        <div className="flex-1 overflow-y-auto p-4 pb-32">
           {loading ? (
             <>
               {[1, 2, 3].map(i => <SchoolCardSkeleton key={i} />)}
@@ -153,7 +191,7 @@ export default function Home() {
             ))
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* Map View (Full screen on mobile) */}
       <div className="absolute inset-0 md:relative md:flex-1 h-full w-full z-0">
