@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Greenwood International School",
+    "coordinates": { "lat": 6.4542, "lng": 3.4246 },
+    "address": { "street": "12 Admiralty Way", "lga": "Eti-Osa", "state": "Lagos" },
+    "price_range": "₦350,000 - ₦500,000",
+    "curriculum": ["British", "Nigerian"],
+    "facilities": ["Swimming Pool", "Science Lab", "Library", "CCTV", "School Bus"],
+    "verified": true,
+    "contact_info": { "phone": "+2348012345678", "email": "admissions@greenwood.com" },
+    "type": "Day"
+  },
+  {
+    "id": 2,
+    "name": "Sunshine Montessori Academy",
+    "coordinates": { "lat": 6.5244, "lng": 3.3792 },
+    "address": { "street": "45 Herbert Macaulay Way", "lga": "Yaba", "state": "Lagos" },
+    "price_range": "₦150,000 - ₦250,000",
+    "curriculum": ["Montessori", "Nigerian"],
+    "facilities": ["Playground", "Music Room", "Computer Lab", "Generator/Solar"],
+    "verified": true,
+    "contact_info": { "phone": "+2348023456789", "email": "info@sunshineacademy.ng" },
+    "type": "Day"
+  },
+  {
+    "id": 3,
+    "name": "Prestige Heights College",
+    "coordinates": { "lat": 6.6018, "lng": 3.3515 },
+    "address": { "street": "8 Oba Akran Avenue", "lga": "Ikeja", "state": "Lagos" },
+    "price_range": "₦200,000 - ₦300,000",
+    "curriculum": ["WAEC", "Nigerian"],
+    "facilities": ["Football Pitch", "Boarding Facilities", "Laboratory", "Fenced Compound"],
+    "verified": false,
+    "contact_info": { "phone": "+2348034567890", "email": "contact@prestigeheights.com" },
+    "type": "Boarding"
+  },
+  {
+    "id": 4,
+    "name": "Lekki British International",
+    "coordinates": { "lat": 6.4474, "lng": 3.4836 },
+    "address": { "street": "Victoria Arobieke St", "lga": "Lekki Phase 1", "state": "Lagos" },
+    "price_range": "₦1,500,000+",
+    "curriculum": ["British", "American"],
+    "facilities": ["Swimming Pool", "Tennis Court", "Robotics Lab", "CCTV", "Air Conditioned Classrooms"],
+    "verified": true,
+    "contact_info": { "phone": "+2348045678901", "email": "admissions@lekkibritish.org" },
+    "type": "Day & Boarding"
+  },
+  {
+    "id": 5,
+    "name": "Mainland Science School",
+    "coordinates": { "lat": 6.5059, "lng": 3.3769 },
+    "address": { "street": "22 University Road", "lga": "Akoka", "state": "Lagos" },
+    "price_range": "₦80,000 - ₦150,000",
+    "curriculum": ["WAEC", "NECO"],
+    "facilities": ["Science Lab", "Library", "Fenced Compound"],
+    "verified": true,
+    "contact_info": { "phone": "+2348056789012", "email": "info@mainlandscience.edu.ng" },
+    "type": "Day"
+  }
+]
