@@ -1,6 +1,6 @@
 
 export interface School {
-    id: number;
+    id: string | number;
     name: string;
     coordinates: {
         lat: number;

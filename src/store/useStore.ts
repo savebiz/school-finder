@@ -62,7 +62,7 @@ export const useStore = create<AppState>((set, get) => ({
             const res = await fetch(`/api/places?${params.toString()}`);
             const data = await res.json();
 
-            const newSchools = data.results as School[];
+            const newSchools = (data.results || []) as School[];
 
             set((state) => {
                 const updatedSchools = isLoadMore ? [...state.schools, ...newSchools] : newSchools;

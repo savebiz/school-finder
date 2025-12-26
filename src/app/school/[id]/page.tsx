@@ -11,9 +11,10 @@ export default function SchoolDetail() {
     const router = useRouter();
     const { schools } = useStore();
 
-    // params.id is string, school.id is number
-    const id = Number(params?.id);
-    const school = schools.find(s => s.id === id);
+    // params.id is string, school.id can be string or number
+    const id = params?.id as string;
+    // Loose comparison to handle both string/number IDs
+    const school = schools.find(s => s.id.toString() === id);
 
     if (!school) {
         return (

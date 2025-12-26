@@ -13,7 +13,7 @@ const MOCK_GOOGLE_DATA = Array.from({ length: 60 }).map((_, i) => ({
         lga: i % 2 === 0 ? "Lekki" : "Ikeja",
         state: "Lagos"
     },
-    rating: (3 + Math.random() * 2).toFixed(1), // Random rating 3.0 - 5.0
+    rating: parseFloat((3 + Math.random() * 2).toFixed(1)), // Number type
     verified: false,
     contact_info: {
         phone: "+234 800 000 0000",
