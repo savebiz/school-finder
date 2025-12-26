@@ -20,4 +20,5 @@ export interface School {
         email: string;
     };
     type: string;
+    image?: string;
 }
