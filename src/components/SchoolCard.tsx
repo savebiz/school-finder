@@ -3,6 +3,7 @@ import React from 'react';
 import { MapPin, ShieldCheck, Zap, MessageCircle, Star } from 'lucide-react';
 import { School } from '@/types';
 import CompareToggle from './CompareToggle';
+import StarRating from './StarRating';
 
 interface SchoolCardProps {
   school: any;
@@ -48,12 +49,6 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
         <div className="flex justify-between items-start mb-1">
           <h3 className="font-bold text-lg text-gray-900 leading-tight">{school.name}</h3>
 
-          {school.rating && (
-            <div className="flex items-center ml-2">
-              <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-              <span className="text-xs font-bold text-gray-700 ml-1">{school.rating}</span>
-            </div>
-          )}
         </div>
 
         <div className="flex items-center text-gray-500 text-xs mb-3">
@@ -79,17 +74,26 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
           )}
         </div>
 
-        {/* Primary Action */}
-        <a
-          href={`https://wa.me/${school.contact_info.phone.replace(/[^0-9]/g, '')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()} // Prevent card click
-          className="flex items-center justify-center w-full bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-lg font-semibold transition-colors shadow-sm shadow-emerald-200 active:scale-95"
-        >
-          <MessageCircle className="w-4 h-4 mr-2 fill-current" />
-          Chat on WhatsApp
-        </a>
+        {/* Footer: Rating & Action */}
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="flex flex-col">
+            <div className="flex items-center gap-1 mb-1">
+              <span className="text-2xl font-bold text-gray-900 leading-none">{school.rating || 'N/A'}</span>
+              <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Google Rating</span>
+            </div>
+            <StarRating rating={school.rating || 0} size={18} />
+          </div>
+
+          <a
+            href={`https://wa.me/${school.contact_info.phone.replace(/[^0-9]/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-4 rounded-xl transition-all shadow-lg shadow-emerald-200 flex items-center justify-center group"
+          >
+            <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+            <span className="whitespace-nowrap">WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
   );
