@@ -11,7 +11,8 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
   // Safe Image Placeholder (using a reliable gradient or abstract pattern if real image missing)
   // For MVP "Apple-esque" feel, let's use a nice colored placeholder or random unsplash architecture if allowed.
   // Using a solid colorful div for now to ensure no broken images, or a sample URL.
-  const imageUrl = `https://placehold.co/600x400/e2e8f0/475569?text=${encodeURIComponent(school.name)}`;
+  // Use school.image if available, otherwise fallback to placeholder
+  const imageUrl = school.image || `https://placehold.co/600x400/e2e8f0/475569?text=${encodeURIComponent(school.name)}`;
 
   return (
     <div className="bg-white rounded-xl shadow-lg shadow-gray-200/50 hover:shadow-xl transition-all duration-300 cursor-pointer mb-4 overflow-hidden border border-gray-100 group">

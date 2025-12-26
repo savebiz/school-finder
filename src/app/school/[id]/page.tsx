@@ -31,16 +31,28 @@ export default function SchoolDetail() {
     return (
         <div className="min-h-screen bg-gray-50 pb-10">
             {/* Header Image / Pattern */}
-            <div className="h-48 bg-emerald-700 relative">
+                <div className="absolute top-0 left-0 w-full h-full">
+                    {school.image ? (
+                        <img src={school.image} alt={school.name} className="w-full h-full object-cover opacity-30" />
+                    ) : (
+                        <div className="w-full h-full bg-emerald-900/50" />
+                    )}
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                </div>
+
                 <button
                     onClick={() => router.back()}
-                    className="absolute top-4 left-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors backdrop-blur-sm"
+                    className="absolute top-4 left-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors backdrop-blur-sm z-10"
                 >
                     <ArrowLeft className="w-6 h-6" />
                 </button>
-                <div className="absolute -bottom-10 left-4 md:left-10 bg-white p-4 rounded-xl shadow-md flex items-center">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-700 font-bold text-2xl">
-                        {school.name.substring(0, 1)}
+                <div className="absolute -bottom-10 left-4 md:left-10 bg-white p-4 rounded-xl shadow-md flex items-center z-10">
+                    <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-700 font-bold text-2xl overflow-hidden">
+                         {school.image ? (
+                            <img src={school.image} alt={school.name} className="w-full h-full object-cover" />
+                        ) : (
+                            school.name.substring(0, 1)
+                        )}
                     </div>
                     <div className="ml-4">
                         <h1 className="text-xl md:text-2xl font-bold text-gray-900">{school.name}</h1>
@@ -169,7 +181,7 @@ export default function SchoolDetail() {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
