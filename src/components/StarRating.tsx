@@ -26,7 +26,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, color = "text-yellow-40
                 className="absolute top-0 left-0 flex overflow-hidden transition-all duration-500 ease-out"
                 style={{ width: `${percentage}%` }}
             >
-                <div className={`flex ${color}`}>
+                <div className={`flex w-max ${color}`}>
                     {[...Array(5)].map((_, i) => (
                         <Star key={`fg-${i}`} size={size} fill="currentColor" strokeWidth={0} />
                     ))}
