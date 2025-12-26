@@ -47,9 +47,30 @@ export const useStore = create<AppState>((set, get) => ({
     applyFilters: () => {
         const { schools, filters } = get();
         const filtered = schools.filter(school => {
-            // Price Parsing (Simple implementation assuming "Nxx - Nyy")
-            // In real app, school.price_range should be numerical or structured.
-            // Skipping strict price filter for MVP with string ranges, strictly implementing others.
+
+            // Price Filter
+            if (filters.minPrice !== null || filters.maxPrice !== null) {
+                // Parse school price string e.g. "₦350,000 - ₦500,000" or "₦1,500,000+"
+                const priceString = school.price_range.replace(/[^0-9\-\+]/g, '');
+                let schoolMin = 0;
+                let schoolMax = 0;
+
+                if (priceString.includes('+')) {
+                    schoolMin = parseInt(priceString.replace('+', ''));
+                    schoolMax = Infinity;
+                } else if (priceString.includes('-')) {
+                    const parts = priceString.split('-');
+                    schoolMin = parseInt(parts[0]);
+                    schoolMax = parseInt(parts[1]);
+                } else {
+                    // Single value fallback
+                    schoolMin = parseInt(priceString) || 0;
+                    schoolMax = schoolMin;
+                }
+
+                if (filters.minPrice !== null && schoolMax < filters.minPrice) return false;
+                if (filters.maxPrice !== null && schoolMin > filters.maxPrice) return false;
+            }
 
             // Curriculum
             if (filters.curriculum.length > 0) {

@@ -43,9 +43,22 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
                     <div>
                         <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">Budget Range</h3>
                         <div className="flex items-center space-x-2">
-                            <input type="number" placeholder="Min" className="w-full p-2 border border-gray-300 rounded-md text-sm" disabled title="Coming soon" />
+
+                            <input
+                                type="number"
+                                placeholder="Min"
+                                className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                                value={filters.minPrice || ''}
+                                onChange={(e) => setFilter('minPrice', e.target.value ? Number(e.target.value) : null)}
+                            />
                             <span className="text-gray-400">-</span>
-                            <input type="number" placeholder="Max" className="w-full p-2 border border-gray-300 rounded-md text-sm" disabled title="Coming soon" />
+                            <input
+                                type="number"
+                                placeholder="Max"
+                                className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                                value={filters.maxPrice || ''}
+                                onChange={(e) => setFilter('maxPrice', e.target.value ? Number(e.target.value) : null)}
+                            />
                         </div>
                     </div>
 
