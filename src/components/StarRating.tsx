@@ -21,14 +21,16 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, color = "text-yellow-40
                 ))}
             </div>
 
-            {/* Foreground Stars (Filled/Colored) - Overlay with width clipping */}
+            {/* Foreground Stars (Filled/Colored) - Overlay with clip-path */}
             <div
-                className="absolute top-0 left-0 flex overflow-hidden transition-all duration-500 ease-out"
-                style={{ width: `${percentage}%` }}
+                className="absolute top-0 left-0 flex transition-all duration-500 ease-out"
+                style={{
+                    clipPath: `inset(0 ${100 - percentage}% 0 0)`
+                }}
             >
-                <div className={`flex w-max ${color}`}>
+                <div className={`flex ${color}`}>
                     {[...Array(5)].map((_, i) => (
-                        <Star key={`fg-${i}`} size={size} fill="currentColor" strokeWidth={0} className="flex-shrink-0" />
+                        <Star key={`fg-${i}`} size={size} fill="currentColor" strokeWidth={0} />
                     ))}
                 </div>
             </div>
