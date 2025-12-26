@@ -11,15 +11,16 @@ export interface School {
         lga: string;
         state: string;
     };
-    price_range: string;
-    curriculum: string[];
-    facilities: string[];
+    price_range?: string;
+    curriculum?: string[];
+    facilities?: string[];
     verified: boolean;
     contact_info: {
         phone: string;
         email: string;
+        website?: string;
     };
-    type: string;
+    type?: string;
     image?: string;
     rating?: number;
 }

@@ -3,7 +3,7 @@
 
 
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import SchoolCard from '@/components/SchoolCard';
 import SchoolCardSkeleton from '@/components/SchoolCardSkeleton';
@@ -21,7 +21,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function Home() {
-  const { filteredSchools, filters, setFilter, applyFilters } = useStore();
+  const { filteredSchools, filters, setFilter, applyFilters, fetchSchools, isLoading, nextPageToken } = useStore();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -30,11 +30,25 @@ export default function Home() {
   const dragControls = useDragControls();
   const [drawerState, setDrawerState] = useState<'collapsed' | 'half' | 'expanded'>('half');
 
-  // Simulate loading state for Skeletons demo
+  // Initial Fetch
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    fetchSchools();
+    setLoading(false); // remove local loading
+  }, [fetchSchools]);
+
+  // Infinite Scroll
+  const loaderRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const target = entries[0];
+      if (target.isIntersecting && nextPageToken && !isLoading) {
+        fetchSchools(true);
+      }
+    }, { rootMargin: "20px", threshold: 0.1 });
+
+    if (loaderRef.current) observer.observe(loaderRef.current);
+    return () => observer.disconnect();
+  }, [nextPageToken, isLoading, fetchSchools]);
 
   // Calculate center based on schools or default to Lagos
   const mapCenter: [number, number] = useMemo(() => {
@@ -135,7 +149,7 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {loading ? (
+          {loading && !isLoading ? (
             <>
               {[1, 2, 3, 4].map(i => <SchoolCardSkeleton key={i} />)}
             </>
@@ -146,15 +160,25 @@ export default function Home() {
                   <SchoolCard school={school} />
                 </div>
               ))}
-              {filteredSchools.length === 0 && (
-                <div className="text-center py-20">
-                  <div className="bg-gray-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                    <Filter className="w-8 h-8 text-gray-300" />
+
+              {/* Infinite Scroll Loader */}
+              <div ref={loaderRef} className="py-8 text-center">
+                {isLoading && (
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
+                )}
+                {!isLoading && nextPageToken && (
+                  <p className="text-gray-400 text-sm">Scroll for more</p>
+                )}
+                {filteredSchools.length === 0 && !isLoading && (
+                  <div className="text-center py-20">
+                    <div className="bg-gray-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                      <Filter className="w-8 h-8 text-gray-300" />
+                    </div>
+                    <h3 className="text-gray-900 font-bold mb-1">No schools found</h3>
+                    <p className="text-gray-500 text-sm">Try adjusting your filters</p>
                   </div>
-                  <h3 className="text-gray-900 font-bold mb-1">No schools found</h3>
-                  <p className="text-gray-500 text-sm">Try adjusting your filters</p>
-                </div>
-              )}
+                )}
+              </div>
             </>
           )}
         </div>

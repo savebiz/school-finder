@@ -78,28 +78,30 @@ export default function SchoolDetail() {
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="p-3 bg-gray-50 rounded-lg">
                                     <span className="text-xs text-gray-500 block">Type</span>
-                                    <span className="font-medium text-gray-800">{school.type}</span>
+                                    <span className="font-medium text-gray-800">{school.type || 'N/A'}</span>
                                 </div>
                                 <div className="p-3 bg-gray-50 rounded-lg">
                                     <span className="text-xs text-gray-500 block">Price Range</span>
-                                    <span className="font-medium text-emerald-600">{school.price_range}</span>
+                                    <span className="font-medium text-emerald-600">{school.price_range || 'Contact for Price'}</span>
                                 </div>
                             </div>
                         </div>
 
                         {/* Facilities */}
-                        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-                            <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                                <Layers className="w-5 h-5 mr-2 text-emerald-600" /> Facilities
-                            </h2>
-                            <div className="flex flex-wrap gap-2">
-                                {school.facilities.map(fac => (
-                                    <span key={fac} className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-emerald-50 text-emerald-700">
-                                        <CheckCircle className="w-3 h-3 mr-1" /> {fac}
-                                    </span>
-                                ))}
+                        {school.facilities && school.facilities.length > 0 && (
+                            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                                <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                    <Layers className="w-5 h-5 mr-2 text-emerald-600" /> Facilities
+                                </h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {school.facilities.map(fac => (
+                                        <span key={fac} className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-emerald-50 text-emerald-700">
+                                            <CheckCircle className="w-3 h-3 mr-1" /> {fac}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Tuition Breakdown (Mock) */}
                         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
@@ -167,18 +169,20 @@ export default function SchoolDetail() {
                             </button>
                         </div>
 
-                        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-                            <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                                <BookOpen className="w-5 h-5 mr-2 text-emerald-600" /> Curriculum
-                            </h2>
-                            <div className="flex flex-wrap gap-2">
-                                {school.curriculum.map(curr => (
-                                    <span key={curr} className="inline-block px-3 py-1 bg-gray-100 rounded text-sm text-gray-700">
-                                        {curr}
-                                    </span>
-                                ))}
+                        {school.curriculum && school.curriculum.length > 0 && (
+                            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                                <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                    <BookOpen className="w-5 h-5 mr-2 text-emerald-600" /> Curriculum
+                                </h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {school.curriculum.map(curr => (
+                                        <span key={curr} className="inline-block px-3 py-1 bg-gray-100 rounded text-sm text-gray-700">
+                                            {curr}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                 </div>

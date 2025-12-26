@@ -1,7 +1,6 @@
 
 import { create } from 'zustand';
 import { School } from '@/types';
-import schoolsData from '@/data/schools.json';
 
 
 interface FilterState {
@@ -22,6 +21,11 @@ interface AppState {
     toggleCompare: (school: School) => void;
     clearCompare: () => void;
 
+    // API State
+    isLoading: boolean;
+    nextPageToken: string | null;
+    fetchSchools: (isLoadMore?: boolean) => Promise<void>;
+
     setSchools: (schools: School[]) => void;
     setFilter: (key: keyof FilterState, value: any) => void;
     applyFilters: () => void;
@@ -38,10 +42,46 @@ const initialFilters: FilterState = {
 };
 
 export const useStore = create<AppState>((set, get) => ({
-    schools: schoolsData as School[],
-    filteredSchools: schoolsData as School[],
+    schools: [],
+    filteredSchools: [],
     filters: initialFilters,
     compareList: [],
+    isLoading: false,
+    nextPageToken: null,
+
+    fetchSchools: async (isLoadMore = false) => {
+        const { nextPageToken, schools } = get();
+        if (isLoadMore && !nextPageToken) return;
+
+        set({ isLoading: true });
+
+        try {
+            const params = new URLSearchParams();
+            if (isLoadMore && nextPageToken) params.append('pagetoken', nextPageToken);
+
+            const res = await fetch(`/api/places?${params.toString()}`);
+            const data = await res.json();
+
+            const newSchools = data.results as School[];
+
+            set((state) => {
+                const updatedSchools = isLoadMore ? [...state.schools, ...newSchools] : newSchools;
+                return {
+                    schools: updatedSchools,
+                    filteredSchools: updatedSchools, // Note: This resets filters currently. In real app, re-apply filters.
+                    nextPageToken: data.next_page_token,
+                    isLoading: false
+                };
+            });
+
+            // Re-apply filters after fetch
+            get().applyFilters();
+
+        } catch (error) {
+            console.error("Failed to fetch schools:", error);
+            set({ isLoading: false });
+        }
+    },
 
     setSchools: (schools) => set({ schools, filteredSchools: schools }),
 
@@ -74,6 +114,8 @@ export const useStore = create<AppState>((set, get) => ({
 
             // Price Filter
             if (filters.minPrice !== null || filters.maxPrice !== null) {
+                if (!school.price_range) return false;
+
                 // Parse school price string e.g. "₦350,000 - ₦500,000" or "₦1,500,000+"
                 const priceString = school.price_range.replace(/[^0-9\-\+]/g, '');
                 let schoolMin = 0;
@@ -98,20 +140,23 @@ export const useStore = create<AppState>((set, get) => ({
 
             // Curriculum
             if (filters.curriculum.length > 0) {
-                const hasCurriculum = filters.curriculum.some(c => school.curriculum.includes(c));
+                if (!school.curriculum) return false;
+                const hasCurriculum = filters.curriculum.some(c => school.curriculum!.includes(c));
                 if (!hasCurriculum) return false;
             }
 
             // Type
             if (filters.type.length > 0) {
-                const hasType = filters.type.some(t => school.type.includes(t) || school.type === 'Day & Boarding');
+                if (!school.type) return false;
+                const hasType = filters.type.some(t => school.type!.includes(t) || school.type === 'Day & Boarding');
                 // Basic matching
                 if (!hasType) return false;
             }
 
             // Infrastructure
             if (filters.infrastructure.length > 0) {
-                const hasInfra = filters.infrastructure.every(i => school.facilities.includes(i));
+                if (!school.facilities) return false;
+                const hasInfra = filters.infrastructure.every(i => school.facilities!.includes(i));
                 if (!hasInfra) return false;
             }
 

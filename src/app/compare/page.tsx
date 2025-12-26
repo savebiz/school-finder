@@ -22,7 +22,7 @@ export default function ComparePage() {
     }
 
     // Collect all distinct facilities to create rows
-    const allFacilities = Array.from(new Set(compareList.flatMap(s => s.facilities))).sort();
+    const allFacilities = Array.from(new Set(compareList.flatMap(s => s.facilities || []))).filter(Boolean).sort() as string[];
 
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
@@ -126,11 +126,15 @@ export default function ComparePage() {
                                 {compareList.map(school => (
                                     <td key={school.id} className="p-4 border-b border-gray-100 bg-white text-center">
                                         <div className="flex flex-wrap gap-1 justify-center">
-                                            {school.curriculum.map(c => (
-                                                <span key={c} className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
-                                                    {c}
-                                                </span>
-                                            ))}
+                                            {school.curriculum && school.curriculum.length > 0 ? (
+                                                school.curriculum.map(c => (
+                                                    <span key={c} className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
+                                                        {c}
+                                                    </span>
+                                                ))
+                                            ) : (
+                                                <span className="text-gray-400 text-xs italic">N/A</span>
+                                            )}
                                         </div>
                                     </td>
                                 ))}
@@ -150,7 +154,7 @@ export default function ComparePage() {
                                         {facility}
                                     </td>
                                     {compareList.map(school => {
-                                        const hasIt = school.facilities.includes(facility);
+                                        const hasIt = school.facilities ? school.facilities.includes(facility) : false;
                                         return (
                                             <td key={`${school.id}-${facility}`} className="p-4 border-b border-gray-100 bg-white text-center">
                                                 {hasIt ? (
