@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
+import { MapPin, ShieldCheck, Zap, MessageCircle, Star } from 'lucide-react';
 import { School } from '@/types';
 import CompareToggle from './CompareToggle';
 
@@ -47,11 +47,18 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
       <div className="p-4">
         <div className="flex justify-between items-start mb-1">
           <h3 className="font-bold text-lg text-gray-900 leading-tight">{school.name}</h3>
+
+          {school.rating && (
+            <div className="flex items-center ml-2">
+              <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+              <span className="text-xs font-bold text-gray-700 ml-1">{school.rating}</span>
+            </div>
+          )}
         </div>
 
-        <div className="flex items-center text-gray-500 text-sm mb-3">
-          <MapPin className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-          <span className="truncate">{school.address.lga}, {school.address.state}</span>
+        <div className="flex items-center text-gray-500 text-xs mb-3">
+          <MapPin className="w-3 h-3 mr-1" />
+          <span>{school.address.lga}, {school.address.state}</span>
         </div>
 
         {/* Facilities / Badges */}

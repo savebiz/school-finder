@@ -1,158 +1,165 @@
 [
   {
     "id": 1,
-    "name": "Greenwood International School",
+    "name": "Greenwood House School",
     "coordinates": {
       "lat": 6.4542,
-      "lng": 3.4246
+      "lng": 3.4357
     },
     "address": {
-      "street": "12 Admiralty Way",
-      "lga": "Eti-Osa",
+      "street": "1 Greenwood House Road, Parkview Estate",
+      "lga": "Ikoyi",
       "state": "Lagos"
     },
-    "price_range": "₦350,000 - ₦500,000",
+    "price_range": "₦1,500,000+",
     "curriculum": [
       "British",
       "Nigerian"
     ],
     "facilities": [
-      "Swimming Pool",
-      "Science Lab",
       "Library",
-      "CCTV",
-      "School Bus"
+      "Music Room",
+      "Playground",
+      "Coding Lab",
+      "Sick Bay"
     ],
     "verified": true,
+    "rating": 4.5,
     "contact_info": {
-      "phone": "+2348012345678",
-      "email": "admissions@greenwood.com"
+      "phone": "+234 817 562 2333",
+      "email": "info@greenwoodhouseschool.org"
     },
     "type": "Day",
     "image": "/images/schools/greenwood.jpg"
   },
   {
     "id": 2,
-    "name": "Sunshine Montessori Academy",
+    "name": "Corona School Lekki",
     "coordinates": {
-      "lat": 6.5244,
-      "lng": 3.3792
+      "lat": 6.4715,
+      "lng": 3.6394
     },
     "address": {
-      "street": "45 Herbert Macaulay Way",
-      "lga": "Yaba",
+      "street": "Block 35, Corona Drive, Abijo GRA",
+      "lga": "Lekki",
       "state": "Lagos"
     },
-    "price_range": "₦150,000 - ₦250,000",
-    "curriculum": [
-      "Montessori",
-      "Nigerian"
-    ],
-    "facilities": [
-      "Playground",
-      "Music Room",
-      "Computer Lab",
-      "Generator/Solar"
-    ],
-    "verified": true,
-    "contact_info": {
-      "phone": "+2348023456789",
-      "email": "info@sunshineacademy.ng"
-    },
-    "type": "Day",
-    "image": "/images/schools/sunshine.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Prestige Heights College",
-    "coordinates": {
-      "lat": 6.6018,
-      "lng": 3.3515
-    },
-    "address": {
-      "street": "8 Oba Akran Avenue",
-      "lga": "Ikeja",
-      "state": "Lagos"
-    },
-    "price_range": "₦200,000 - ₦300,000",
-    "curriculum": [
-      "WAEC",
-      "Nigerian"
-    ],
-    "facilities": [
-      "Football Pitch",
-      "Boarding Facilities",
-      "Laboratory",
-      "Fenced Compound"
-    ],
-    "verified": false,
-    "contact_info": {
-      "phone": "+2348034567890",
-      "email": "contact@prestigeheights.com"
-    },
-    "type": "Boarding",
-    "image": "/images/schools/prestige.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Lekki British International",
-    "coordinates": {
-      "lat": 6.4474,
-      "lng": 3.4836
-    },
-    "address": {
-      "street": "Victoria Arobieke St",
-      "lga": "Lekki Phase 1",
-      "state": "Lagos"
-    },
-    "price_range": "₦1,500,000+",
+    "price_range": "₦800,000 - ₦1,500,000",
     "curriculum": [
       "British",
-      "American"
+      "Nigerian"
     ],
     "facilities": [
       "Swimming Pool",
-      "Tennis Court",
-      "Robotics Lab",
-      "CCTV",
-      "Air Conditioned Classrooms"
+      "ICT Suite",
+      "Art Studio",
+      "School Bus"
     ],
     "verified": true,
+    "rating": 4.8,
     "contact_info": {
-      "phone": "+2348045678901",
-      "email": "admissions@lekkibritish.org"
+      "phone": "+234 903 111 1555",
+      "email": "lekki@coronaschools.org"
+    },
+    "type": "Day",
+    "image": "/images/schools/corona.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Greensprings School",
+    "coordinates": {
+      "lat": 6.4757,
+      "lng": 3.6164
+    },
+    "address": {
+      "street": "Lekki Campus, KM 40 Lekki-Epe Expressway, Awoyaya",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦2,000,000+",
+    "curriculum": [
+      "British",
+      "International Baccalaureate",
+      "Montessori"
+    ],
+    "facilities": [
+      "Boarding",
+      "Swimming Pool",
+      "Football Pitch",
+      "Tennis Court",
+      "Sensory Room"
+    ],
+    "verified": true,
+    "rating": 4.7,
+    "contact_info": {
+      "phone": "+234 704 550 2424",
+      "email": "info.lekki@greensprings-school.com"
     },
     "type": "Day & Boarding",
-    "image": "/images/schools/lekki.jpg"
+    "image": "/images/schools/greensprings.jpg"
+  },
+  {
+    "id": 4,
+    "name": "British International School",
+    "coordinates": {
+      "lat": 6.4316,
+      "lng": 3.4429
+    },
+    "address": {
+      "street": "1 Landbridge Avenue, Oniru Private Estate",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦3,500,000+",
+    "curriculum": [
+      "British"
+    ],
+    "facilities": [
+      "Boarding",
+      "Olympic Swimming Pool",
+      "Theatre",
+      "Sports Hall",
+      "Music Suites"
+    ],
+    "verified": true,
+    "rating": 4.4,
+    "contact_info": {
+      "phone": "+234 807 555 1234",
+      "email": "admissions@bis-ny.org"
+    },
+    "type": "Day & Boarding",
+    "image": "/images/schools/bis.jpg"
   },
   {
     "id": 5,
-    "name": "Mainland Science School",
+    "name": "Chrisland School",
     "coordinates": {
-      "lat": 6.5059,
-      "lng": 3.3769
+      "lat": 6.5936,
+      "lng": 3.3598
     },
     "address": {
-      "street": "22 University Road",
-      "lga": "Akoka",
+      "street": "26 Opebi Road",
+      "lga": "Ikeja",
       "state": "Lagos"
     },
-    "price_range": "₦80,000 - ₦150,000",
+    "price_range": "₦1,000,000 - ₦2,000,000",
     "curriculum": [
-      "WAEC",
-      "NECO"
+      "British",
+      "Nigerian"
     ],
     "facilities": [
-      "Science Lab",
+      "Science Labs",
       "Library",
-      "Fenced Compound"
+      "Multi-purpose Hall",
+      "Sports Field"
     ],
-    "verified": true,
+    "verified": false,
+    "rating": 4.5,
     "contact_info": {
-      "phone": "+2348056789012",
-      "email": "info@mainlandscience.edu.ng"
+      "phone": "+234 817 934 2222",
+      "email": "contact@chrislandschools.com"
     },
     "type": "Day",
-    "image": "/images/schools/mainland.jpg"
+    "image": "/images/schools/chrisland.jpg"
   }
 ]

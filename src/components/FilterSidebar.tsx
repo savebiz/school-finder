@@ -102,6 +102,32 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
 
+                    {/* Location */}
+                    <div>
+                        <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">Location</h3>
+                        <div className="space-y-2">
+                            {['Ikeja', 'Lekki', 'Ikoyi', 'Victoria Island', 'Ajah', 'Yaba'].map((loc) => (
+                                <label key={loc} className="flex items-center space-x-2 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        className="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+                                        checked={filters.location && filters.location.includes(loc)}
+                                        onChange={() => {
+                                            const category = 'location';
+                                            const value = loc;
+                                            const current = filters.location || [];
+                                            const updated = current.includes(value)
+                                                ? current.filter(item => item !== value)
+                                                : [...current, value];
+                                            setFilter(category, updated);
+                                        }}
+                                    />
+                                    <span className="text-gray-700 text-sm">{loc}</span>
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
                     {/* Infrastructure */}
                     <div>
                         <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">Infrastructure</h3>

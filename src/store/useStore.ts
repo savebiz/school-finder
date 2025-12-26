@@ -10,6 +10,7 @@ interface FilterState {
     curriculum: string[];
     type: string[];
     infrastructure: string[];
+    location: string[];
 }
 
 interface AppState {
@@ -32,7 +33,8 @@ const initialFilters: FilterState = {
     maxPrice: null,
     curriculum: [],
     type: [],
-    infrastructure: []
+    infrastructure: [],
+    location: []
 };
 
 export const useStore = create<AppState>((set, get) => ({
@@ -110,10 +112,14 @@ export const useStore = create<AppState>((set, get) => ({
             // Infrastructure
             if (filters.infrastructure.length > 0) {
                 const hasInfra = filters.infrastructure.every(i => school.facilities.includes(i));
-                // Strict match: must have ALL selected infrastructure? Or ANY?
-                // Usually features are "Must have". Let's do ANY for now or ALL? "Every" is stricter.
-                // Let's do "every" selected facility properly.
                 if (!hasInfra) return false;
+            }
+
+            // Location (LGA)
+            if (filters.location.length > 0) {
+                // Check if school.address.lga matches any selected location
+                const hasLocation = filters.location.includes(school.address.lga);
+                if (!hasLocation) return false;
             }
 
             return true;

@@ -21,4 +21,5 @@ export interface School {
     };
     type: string;
     image?: string;
+    rating?: number;
 }
