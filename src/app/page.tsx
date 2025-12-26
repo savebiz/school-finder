@@ -68,7 +68,7 @@ export default function Home() {
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md p-4 shadow-sm z-20 flex justify-between items-center safe-area-top">
         <h1 className="text-lg font-bold text-gray-900 flex items-center">
-          <MapPin className="w-5 h-5 mr-1 text-emerald-600" /> SchoolFinder
+          <img src="/school-finder-logo.png" alt="SchoolFinder" className="h-8 w-auto mr-1" /> SchoolFinder
         </h1>
         <button
           onClick={() => setIsFilterOpen(true)}
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="p-5 border-b border-gray-100">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-bold text-gray-900 flex items-center tracking-tight">
-              <MapPin className="w-6 h-6 mr-2 text-emerald-600" /> SchoolFinder NG
+              <img src="/school-finder-logo.png" alt="SchoolFinder NG" className="h-10 w-auto mr-2" /> SchoolFinder NG
             </h1>
             <button
               onClick={() => setIsFilterOpen(!isFilterOpen)}
