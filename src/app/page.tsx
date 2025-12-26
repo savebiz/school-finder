@@ -11,7 +11,7 @@ import FilterSidebar from '@/components/FilterSidebar';
 import FilterChips from '@/components/FilterChips';
 import { useStore } from '@/store/useStore';
 import { MapPin, Filter, Menu } from 'lucide-react';
-import { motion, useAnimation, PanInfo } from 'framer-motion';
+import { motion, useAnimation, PanInfo, useDragControls } from 'framer-motion';
 
 // Dynamic import for Map to avoid SSR issues
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -26,6 +26,7 @@ export default function Home() {
 
   // Animation controls for the drawer
   const controls = useAnimation();
+  const dragControls = useDragControls();
   const [drawerState, setDrawerState] = useState<'collapsed' | 'half' | 'expanded'>('half');
 
   // Simulate loading state for Skeletons demo
@@ -163,14 +164,32 @@ export default function Home() {
         animate={controls}
         initial={{ y: '50vh' }}
         drag="y"
-        dragConstraints={{ top: 0, bottom: 0 }} // Constraints handled by controls, this just enables drag physics feel
+        dragControls={dragControls}
+        dragListener={false} // Disable global drag listener, only enable via controls
+        dragConstraints={{ top: 0, bottom: 0 }}
         dragElastic={0.2}
         onDragEnd={onDragEnd}
         className="md:hidden fixed top-0 left-0 right-0 h-[100vh] bg-white rounded-t-2xl shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.1)] z-10 flex flex-col"
-        style={{ touchAction: 'none' }} // Prevent browser scroll interference
+        style={{ touchAction: 'none' }}
       >
         {/* Handle Bar */}
-        <div className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing">
+        <div
+          className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing"
+          onPointerDown={(e) => dragControls.start(e)}
+          onClick={() => {
+            // Simple toggle logic on click if not dragging
+            if (drawerState === 'collapsed') {
+              setDrawerState('half');
+              controls.start({ y: '50vh' });
+            } else if (drawerState === 'half') {
+              setDrawerState('expanded');
+              controls.start({ y: '10vh' });
+            } else {
+              setDrawerState('half');
+              controls.start({ y: '50vh' });
+            }
+          }}
+        >
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
         </div>
 
