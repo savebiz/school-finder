@@ -60,6 +60,11 @@ export const useStore = create<AppState>((set, get) => ({
             if (isLoadMore && nextPageToken) params.append('pagetoken', nextPageToken);
 
             const res = await fetch(`/api/places?${params.toString()}`);
+
+            if (!res.ok) {
+                throw new Error(`API returned ${res.status}`);
+            }
+
             const data = await res.json();
 
             const newSchools = (data.results || []) as School[];

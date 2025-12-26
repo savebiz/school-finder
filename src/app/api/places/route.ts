@@ -1,51 +1,47 @@
 import { NextResponse } from 'next/server';
-
-// Mock database to simulate "All Google Maps" data
-const MOCK_GOOGLE_DATA = Array.from({ length: 60 }).map((_, i) => ({
-    id: `gmap-${i + 1}`,
-    name: `School ${i + 1} (Google Result)`,
-    coordinates: {
-        lat: 6.45 + (Math.random() * 0.1),
-        lng: 3.4 + (Math.random() * 0.1)
-    },
-    address: {
-        street: `${Math.floor(Math.random() * 100)} Maps St, Lagos`,
-        lga: i % 2 === 0 ? "Lekki" : "Ikeja",
-        state: "Lagos"
-    },
-    rating: parseFloat((3 + Math.random() * 2).toFixed(1)), // Number type
-    verified: false,
-    contact_info: {
-        phone: "+234 800 000 0000",
-        email: ""
-    },
-    type: "Day", // Default for Google results
-    price_range: undefined, // Google doesn't have this
-    curriculum: undefined, // Google doesn't have this
-    facilities: undefined // Google doesn't have this
-}));
+import fs from 'fs';
+import path from 'path';
+import { School } from '@/types';
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const pageToken = searchParams.get('pagetoken');
-    const pageSize = 10;
 
-    // Simulate pagination
-    let startIndex = 0;
-    if (pageToken) {
-        startIndex = parseInt(pageToken);
+    // Load Schools from JSON (Robust Source)
+    const filePath = path.join(process.cwd(), 'src/data/schools.json');
+    let allSchools: School[] = [];
+
+    try {
+        if (fs.existsSync(filePath)) {
+            const fileData = fs.readFileSync(filePath, 'utf8');
+            allSchools = JSON.parse(fileData);
+        } else {
+            console.error('schools.json not found');
+            return NextResponse.json({ results: [], next_page_token: null });
+        }
+    } catch (err) {
+        console.error('Failed to load schools.json', err);
+        return NextResponse.json({ results: [], next_page_token: null }, { status: 500 });
     }
 
-    const nextIndex = startIndex + pageSize;
-    const results = MOCK_GOOGLE_DATA.slice(startIndex, nextIndex);
+    // Pagination Logic
+    const PAGE_SIZE = 20;
+    let startIndex = 0;
 
-    const nextPageToken = nextIndex < MOCK_GOOGLE_DATA.length ? nextIndex.toString() : null;
+    if (pageToken) {
+        startIndex = parseInt(pageToken);
+        if (isNaN(startIndex)) startIndex = 0;
+    }
 
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const paginatedSchools = allSchools.slice(startIndex, startIndex + PAGE_SIZE);
+    const nextIndex = startIndex + PAGE_SIZE;
+    const nextToken = nextIndex < allSchools.length ? nextIndex.toString() : null;
+
+    // Simulate Network Delay (Optional, for realism)
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     return NextResponse.json({
-        results,
-        next_page_token: nextPageToken
+        results: paginatedSchools,
+        next_page_token: nextToken
     });
 }

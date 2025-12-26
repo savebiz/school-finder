@@ -1,165 +1,3252 @@
 [
   {
-    "id": 1,
-    "name": "Greenwood House School",
+    "id": "gmap-1",
+    "name": "Grace Springs College",
     "coordinates": {
-      "lat": 6.4542,
-      "lng": 3.4357
+      "lat": 6.480099,
+      "lng": 3.455489
     },
     "address": {
-      "street": "1 Greenwood House Road, Parkview Estate",
-      "lga": "Ikoyi",
+      "street": "88 Random Street",
+      "lga": "Lekki",
       "state": "Lagos"
     },
-    "price_range": "₦1,500,000+",
-    "curriculum": [
-      "British",
-      "Nigerian"
-    ],
     "facilities": [
-      "Library",
+      "Swimming Pool",
       "Music Room",
-      "Playground",
-      "Coding Lab",
-      "Sick Bay"
+      "Sports Field",
+      "Bus Service"
     ],
-    "verified": true,
-    "rating": 4.5,
-    "contact_info": {
-      "phone": "+234 817 562 2333",
-      "email": "info@greenwoodhouseschool.org"
-    },
-    "type": "Day",
-    "image": "/images/schools/greenwood.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Corona School Lekki",
-    "coordinates": {
-      "lat": 6.4715,
-      "lng": 3.6394
-    },
-    "address": {
-      "street": "Block 35, Corona Drive, Abijo GRA",
-      "lga": "Lekki",
-      "state": "Lagos"
-    },
-    "price_range": "₦800,000 - ₦1,500,000",
-    "curriculum": [
-      "British",
-      "Nigerian"
-    ],
-    "facilities": [
-      "Swimming Pool",
-      "ICT Suite",
-      "Art Studio",
-      "School Bus"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "contact_info": {
-      "phone": "+234 903 111 1555",
-      "email": "lekki@coronaschools.org"
-    },
-    "type": "Day",
-    "image": "/images/schools/corona.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Greensprings School",
-    "coordinates": {
-      "lat": 6.4757,
-      "lng": 3.6164
-    },
-    "address": {
-      "street": "Lekki Campus, KM 40 Lekki-Epe Expressway, Awoyaya",
-      "lga": "Lekki",
-      "state": "Lagos"
-    },
-    "price_range": "₦2,000,000+",
-    "curriculum": [
-      "British",
-      "International Baccalaureate",
-      "Montessori"
-    ],
-    "facilities": [
-      "Boarding",
-      "Swimming Pool",
-      "Football Pitch",
-      "Tennis Court",
-      "Sensory Room"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "contact_info": {
-      "phone": "+234 704 550 2424",
-      "email": "info.lekki@greensprings-school.com"
-    },
-    "type": "Day & Boarding",
-    "image": "/images/schools/greensprings.jpg"
-  },
-  {
-    "id": 4,
-    "name": "British International School",
-    "coordinates": {
-      "lat": 6.4316,
-      "lng": 3.4429
-    },
-    "address": {
-      "street": "1 Landbridge Avenue, Oniru Private Estate",
-      "lga": "Victoria Island",
-      "state": "Lagos"
-    },
-    "price_range": "₦3,500,000+",
-    "curriculum": [
-      "British"
-    ],
-    "facilities": [
-      "Boarding",
-      "Olympic Swimming Pool",
-      "Theatre",
-      "Sports Hall",
-      "Music Suites"
-    ],
-    "verified": true,
     "rating": 4.4,
+    "verified": true,
     "contact_info": {
-      "phone": "+234 807 555 1234",
-      "email": "admissions@bis-ny.org"
+      "phone": "+234 890 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
     },
-    "type": "Day & Boarding",
-    "image": "/images/schools/bis.jpg"
+    "type": "Boarding",
+    "image": null
   },
   {
-    "id": 5,
-    "name": "Chrisland School",
+    "id": "gmap-2",
+    "name": "Imperial Lights College",
     "coordinates": {
-      "lat": 6.5936,
-      "lng": 3.3598
+      "lat": 6.605377,
+      "lng": 3.526354
     },
     "address": {
-      "street": "26 Opebi Road",
+      "street": "14 Random Street",
       "lga": "Ikeja",
       "state": "Lagos"
     },
-    "price_range": "₦1,000,000 - ₦2,000,000",
+    "price_range": "₦602000 - ₦2735000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 3.5,
+    "verified": true,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-3",
+    "name": "Pinefield Schools",
+    "coordinates": {
+      "lat": 6.633431,
+      "lng": 3.415037
+    },
+    "address": {
+      "street": "72 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦601000 - ₦2806000",
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 4.6,
+    "verified": true,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-4",
+    "name": "Meadow Hall",
+    "coordinates": {
+      "lat": 6.463572,
+      "lng": 3.432604
+    },
+    "address": {
+      "street": "15 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦605000 - ₦2333000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Bus Service"
+    ],
+    "rating": 4.4,
+    "verified": true,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-5",
+    "name": "Greensprings School",
+    "coordinates": {
+      "lat": 6.602892,
+      "lng": 3.565997
+    },
+    "address": {
+      "street": "42 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.6,
+    "verified": true,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-6",
+    "name": "Corona School",
+    "coordinates": {
+      "lat": 6.634693,
+      "lng": 3.502584
+    },
+    "address": {
+      "street": "48 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1649000 - ₦2499000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Art Studio",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-7",
+    "name": "Chrisland School",
+    "coordinates": {
+      "lat": 6.494558,
+      "lng": 3.420864
+    },
+    "address": {
+      "street": "41 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
     "curriculum": [
       "British",
       "Nigerian"
     ],
     "facilities": [
-      "Science Labs",
-      "Library",
-      "Multi-purpose Hall",
-      "Sports Field"
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
     ],
+    "rating": 4.7,
     "verified": false,
-    "rating": 4.5,
     "contact_info": {
-      "phone": "+234 817 934 2222",
-      "email": "contact@chrislandschools.com"
+      "phone": "+234 890 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-8",
+    "name": "Dowen College",
+    "coordinates": {
+      "lat": 6.541017,
+      "lng": 3.401232
+    },
+    "address": {
+      "street": "84 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
     },
     "type": "Day",
-    "image": "/images/schools/chrisland.jpg"
+    "image": null
+  },
+  {
+    "id": "gmap-9",
+    "name": "British International School",
+    "coordinates": {
+      "lat": 6.615272,
+      "lng": 3.556004
+    },
+    "address": {
+      "street": "100 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦529000 - ₦2148000",
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Library"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-10",
+    "name": "Lekki British School",
+    "coordinates": {
+      "lat": 6.597125,
+      "lng": 3.498614
+    },
+    "address": {
+      "street": "30 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-11",
+    "name": "Whitesands School",
+    "coordinates": {
+      "lat": 6.613904,
+      "lng": 3.4056
+    },
+    "address": {
+      "street": "53 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1265000 - ₦2688000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@whitesandsschool.com",
+      "website": "https://whitesandsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-12",
+    "name": "Grange School",
+    "coordinates": {
+      "lat": 6.559284,
+      "lng": 3.440134
+    },
+    "address": {
+      "street": "79 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦573000 - ₦2149000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Boarding"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@grangeschool.com",
+      "website": "https://grangeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-13",
+    "name": "St. Saviours School",
+    "coordinates": {
+      "lat": 6.480758,
+      "lng": 3.498447
+    },
+    "address": {
+      "street": "81 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1759000 - ₦2302000",
+    "facilities": [
+      "Tech Lab",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@st.savioursschool.com",
+      "website": "https://st.savioursschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-14",
+    "name": "Children International School",
+    "coordinates": {
+      "lat": 6.546644,
+      "lng": 3.49746
+    },
+    "address": {
+      "street": "32 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1598000 - ₦2343000",
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@childreninternationalschool.com",
+      "website": "https://childreninternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-15",
+    "name": "Riverbank School",
+    "coordinates": {
+      "lat": 6.537758,
+      "lng": 3.427016
+    },
+    "address": {
+      "street": "18 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1394000 - ₦2555000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@riverbankschool.com",
+      "website": "https://riverbankschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-16",
+    "name": "Emerald Schools",
+    "coordinates": {
+      "lat": 6.46907,
+      "lng": 3.465194
+    },
+    "address": {
+      "street": "69 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1855000 - ₦2718000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@emeraldschools.com",
+      "website": "https://emeraldschools.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-17",
+    "name": "Rainbow College",
+    "coordinates": {
+      "lat": 6.523211,
+      "lng": 3.519996
+    },
+    "address": {
+      "street": "98 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1621000 - ₦2701000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Sports Field"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@rainbowcollege.com",
+      "website": "https://rainbowcollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-18",
+    "name": "Temple School",
+    "coordinates": {
+      "lat": 6.606569,
+      "lng": 3.438894
+    },
+    "address": {
+      "street": "2 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦428000 - ₦2292000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@templeschool.com",
+      "website": "https://templeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-19",
+    "name": "Grace Springs College 2",
+    "coordinates": {
+      "lat": 6.474697,
+      "lng": 3.493911
+    },
+    "address": {
+      "street": "82 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field",
+      "Boarding",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-20",
+    "name": "Imperial Lights College 2",
+    "coordinates": {
+      "lat": 6.609221,
+      "lng": 3.484087
+    },
+    "address": {
+      "street": "31 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1760000 - ₦2659000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-21",
+    "name": "Pinefield Schools 2",
+    "coordinates": {
+      "lat": 6.464239,
+      "lng": 3.59918
+    },
+    "address": {
+      "street": "46 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦974000 - ₦2052000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field",
+      "Art Studio"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-22",
+    "name": "Meadow Hall 2",
+    "coordinates": {
+      "lat": 6.62678,
+      "lng": 3.52523
+    },
+    "address": {
+      "street": "89 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1515000 - ₦2889000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Library"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-23",
+    "name": "Greensprings School 2",
+    "coordinates": {
+      "lat": 6.470872,
+      "lng": 3.439421
+    },
+    "address": {
+      "street": "13 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1471000 - ₦2133000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-24",
+    "name": "Corona School 2",
+    "coordinates": {
+      "lat": 6.60407,
+      "lng": 3.505116
+    },
+    "address": {
+      "street": "70 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-25",
+    "name": "Chrisland School 2",
+    "coordinates": {
+      "lat": 6.450741,
+      "lng": 3.521035
+    },
+    "address": {
+      "street": "68 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1330000 - ₦2438000",
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field",
+      "Boarding"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-26",
+    "name": "Dowen College 2",
+    "coordinates": {
+      "lat": 6.496684,
+      "lng": 3.585046
+    },
+    "address": {
+      "street": "33 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-27",
+    "name": "British International School 2",
+    "coordinates": {
+      "lat": 6.568518,
+      "lng": 3.40944
+    },
+    "address": {
+      "street": "60 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1072000 - ₦2124000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field",
+      "Art Studio",
+      "Bus Service"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-28",
+    "name": "Lekki British School 2",
+    "coordinates": {
+      "lat": 6.601818,
+      "lng": 3.545205
+    },
+    "address": {
+      "street": "58 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Art Studio"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-29",
+    "name": "Whitesands School 2",
+    "coordinates": {
+      "lat": 6.537502,
+      "lng": 3.517089
+    },
+    "address": {
+      "street": "31 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1678000 - ₦2283000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@whitesandsschool.com",
+      "website": "https://whitesandsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-30",
+    "name": "Grange School 2",
+    "coordinates": {
+      "lat": 6.636224,
+      "lng": 3.593014
+    },
+    "address": {
+      "street": "62 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1422000 - ₦2597000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@grangeschool.com",
+      "website": "https://grangeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-31",
+    "name": "St. Saviours School 2",
+    "coordinates": {
+      "lat": 6.636098,
+      "lng": 3.50699
+    },
+    "address": {
+      "street": "79 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦486000 - ₦2735000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 3.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@st.savioursschool.com",
+      "website": "https://st.savioursschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-32",
+    "name": "Children International School 2",
+    "coordinates": {
+      "lat": 6.481791,
+      "lng": 3.439942
+    },
+    "address": {
+      "street": "14 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1054000 - ₦2149000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Art Studio",
+      "Boarding",
+      "Bus Service"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@childreninternationalschool.com",
+      "website": "https://childreninternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-33",
+    "name": "Riverbank School 2",
+    "coordinates": {
+      "lat": 6.45491,
+      "lng": 3.514942
+    },
+    "address": {
+      "street": "93 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1990000 - ₦2726000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@riverbankschool.com",
+      "website": "https://riverbankschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-34",
+    "name": "Emerald Schools 2",
+    "coordinates": {
+      "lat": 6.578493,
+      "lng": 3.481743
+    },
+    "address": {
+      "street": "99 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@emeraldschools.com",
+      "website": "https://emeraldschools.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-35",
+    "name": "Rainbow College 2",
+    "coordinates": {
+      "lat": 6.597868,
+      "lng": 3.458078
+    },
+    "address": {
+      "street": "70 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1378000 - ₦2070000",
+    "facilities": [
+      "Tech Lab",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@rainbowcollege.com",
+      "website": "https://rainbowcollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-36",
+    "name": "Temple School 2",
+    "coordinates": {
+      "lat": 6.59513,
+      "lng": 3.439929
+    },
+    "address": {
+      "street": "5 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1999000 - ₦2660000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 3.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@templeschool.com",
+      "website": "https://templeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-37",
+    "name": "Grace Springs College 3",
+    "coordinates": {
+      "lat": 6.583453,
+      "lng": 3.469123
+    },
+    "address": {
+      "street": "49 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1708000 - ₦2242000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Art Studio",
+      "Boarding"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-38",
+    "name": "Imperial Lights College 3",
+    "coordinates": {
+      "lat": 6.601222,
+      "lng": 3.489137
+    },
+    "address": {
+      "street": "91 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1859000 - ₦2671000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-39",
+    "name": "Pinefield Schools 3",
+    "coordinates": {
+      "lat": 6.610744,
+      "lng": 3.466509
+    },
+    "address": {
+      "street": "9 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1064000 - ₦2084000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-40",
+    "name": "Meadow Hall 3",
+    "coordinates": {
+      "lat": 6.472009,
+      "lng": 3.460493
+    },
+    "address": {
+      "street": "19 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Sick Bay"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-41",
+    "name": "Greensprings School 3",
+    "coordinates": {
+      "lat": 6.609849,
+      "lng": 3.455457
+    },
+    "address": {
+      "street": "99 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Bus Service"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-42",
+    "name": "Corona School 3",
+    "coordinates": {
+      "lat": 6.48604,
+      "lng": 3.470795
+    },
+    "address": {
+      "street": "40 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦784000 - ₦2444000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-43",
+    "name": "Chrisland School 3",
+    "coordinates": {
+      "lat": 6.572067,
+      "lng": 3.506444
+    },
+    "address": {
+      "street": "57 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-44",
+    "name": "Dowen College 3",
+    "coordinates": {
+      "lat": 6.562547,
+      "lng": 3.587792
+    },
+    "address": {
+      "street": "71 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦922000 - ₦2428000",
+    "facilities": [
+      "Sports Field",
+      "Art Studio",
+      "Bus Service"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-45",
+    "name": "British International School 3",
+    "coordinates": {
+      "lat": 6.575795,
+      "lng": 3.576278
+    },
+    "address": {
+      "street": "96 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field",
+      "Library"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-46",
+    "name": "Lekki British School 3",
+    "coordinates": {
+      "lat": 6.602272,
+      "lng": 3.401801
+    },
+    "address": {
+      "street": "37 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Boarding",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-47",
+    "name": "Whitesands School 3",
+    "coordinates": {
+      "lat": 6.59535,
+      "lng": 3.544369
+    },
+    "address": {
+      "street": "17 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1506000 - ₦2588000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@whitesandsschool.com",
+      "website": "https://whitesandsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-48",
+    "name": "Grange School 3",
+    "coordinates": {
+      "lat": 6.497173,
+      "lng": 3.482422
+    },
+    "address": {
+      "street": "3 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦883000 - ₦2799000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Art Studio",
+      "Boarding",
+      "Bus Service"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@grangeschool.com",
+      "website": "https://grangeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-49",
+    "name": "St. Saviours School 3",
+    "coordinates": {
+      "lat": 6.588183,
+      "lng": 3.410687
+    },
+    "address": {
+      "street": "65 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1162000 - ₦2327000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@st.savioursschool.com",
+      "website": "https://st.savioursschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-50",
+    "name": "Children International School 3",
+    "coordinates": {
+      "lat": 6.528987,
+      "lng": 3.434004
+    },
+    "address": {
+      "street": "46 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1167000 - ₦2963000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@childreninternationalschool.com",
+      "website": "https://childreninternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-51",
+    "name": "Riverbank School 3",
+    "coordinates": {
+      "lat": 6.464204,
+      "lng": 3.498638
+    },
+    "address": {
+      "street": "26 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦556000 - ₦2126000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@riverbankschool.com",
+      "website": "https://riverbankschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-52",
+    "name": "Emerald Schools 3",
+    "coordinates": {
+      "lat": 6.564097,
+      "lng": 3.489326
+    },
+    "address": {
+      "street": "55 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1989000 - ₦2835000",
+    "facilities": [
+      "Tech Lab",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@emeraldschools.com",
+      "website": "https://emeraldschools.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-53",
+    "name": "Rainbow College 3",
+    "coordinates": {
+      "lat": 6.63287,
+      "lng": 3.564686
+    },
+    "address": {
+      "street": "20 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Boarding"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@rainbowcollege.com",
+      "website": "https://rainbowcollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-54",
+    "name": "Temple School 3",
+    "coordinates": {
+      "lat": 6.526681,
+      "lng": 3.419951
+    },
+    "address": {
+      "street": "49 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1737000 - ₦2516000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sick Bay"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@templeschool.com",
+      "website": "https://templeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-55",
+    "name": "Grace Springs College 4",
+    "coordinates": {
+      "lat": 6.56773,
+      "lng": 3.559604
+    },
+    "address": {
+      "street": "77 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-56",
+    "name": "Imperial Lights College 4",
+    "coordinates": {
+      "lat": 6.504944,
+      "lng": 3.500461
+    },
+    "address": {
+      "street": "62 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦531000 - ₦2503000",
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-57",
+    "name": "Pinefield Schools 4",
+    "coordinates": {
+      "lat": 6.525422,
+      "lng": 3.441047
+    },
+    "address": {
+      "street": "69 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1524000 - ₦2892000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-58",
+    "name": "Meadow Hall 4",
+    "coordinates": {
+      "lat": 6.567492,
+      "lng": 3.573694
+    },
+    "address": {
+      "street": "100 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Boarding",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-59",
+    "name": "Greensprings School 4",
+    "coordinates": {
+      "lat": 6.453269,
+      "lng": 3.594447
+    },
+    "address": {
+      "street": "83 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-60",
+    "name": "Corona School 4",
+    "coordinates": {
+      "lat": 6.615721,
+      "lng": 3.450126
+    },
+    "address": {
+      "street": "46 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Boarding",
+      "Bus Service"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-61",
+    "name": "Chrisland School 4",
+    "coordinates": {
+      "lat": 6.491293,
+      "lng": 3.580604
+    },
+    "address": {
+      "street": "55 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1468000 - ₦2405000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-62",
+    "name": "Dowen College 4",
+    "coordinates": {
+      "lat": 6.584778,
+      "lng": 3.58941
+    },
+    "address": {
+      "street": "90 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦719000 - ₦2193000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-63",
+    "name": "British International School 4",
+    "coordinates": {
+      "lat": 6.612774,
+      "lng": 3.426727
+    },
+    "address": {
+      "street": "69 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1493000 - ₦2667000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-64",
+    "name": "Lekki British School 4",
+    "coordinates": {
+      "lat": 6.454107,
+      "lng": 3.413799
+    },
+    "address": {
+      "street": "6 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1105000 - ₦2526000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Sick Bay"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-65",
+    "name": "Whitesands School 4",
+    "coordinates": {
+      "lat": 6.489178,
+      "lng": 3.408408
+    },
+    "address": {
+      "street": "85 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Bus Service"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@whitesandsschool.com",
+      "website": "https://whitesandsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-66",
+    "name": "Grange School 4",
+    "coordinates": {
+      "lat": 6.646071,
+      "lng": 3.510774
+    },
+    "address": {
+      "street": "59 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦604000 - ₦2446000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@grangeschool.com",
+      "website": "https://grangeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-67",
+    "name": "St. Saviours School 4",
+    "coordinates": {
+      "lat": 6.47794,
+      "lng": 3.519503
+    },
+    "address": {
+      "street": "21 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1453000 - ₦2908000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@st.savioursschool.com",
+      "website": "https://st.savioursschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-68",
+    "name": "Children International School 4",
+    "coordinates": {
+      "lat": 6.478376,
+      "lng": 3.504743
+    },
+    "address": {
+      "street": "75 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@childreninternationalschool.com",
+      "website": "https://childreninternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-69",
+    "name": "Riverbank School 4",
+    "coordinates": {
+      "lat": 6.481177,
+      "lng": 3.466684
+    },
+    "address": {
+      "street": "29 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1519000 - ₦2330000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@riverbankschool.com",
+      "website": "https://riverbankschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-70",
+    "name": "Emerald Schools 4",
+    "coordinates": {
+      "lat": 6.541557,
+      "lng": 3.581545
+    },
+    "address": {
+      "street": "80 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1315000 - ₦2920000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@emeraldschools.com",
+      "website": "https://emeraldschools.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-71",
+    "name": "Rainbow College 4",
+    "coordinates": {
+      "lat": 6.59593,
+      "lng": 3.519025
+    },
+    "address": {
+      "street": "99 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1232000 - ₦2393000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Boarding",
+      "Bus Service"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@rainbowcollege.com",
+      "website": "https://rainbowcollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-72",
+    "name": "Temple School 4",
+    "coordinates": {
+      "lat": 6.637627,
+      "lng": 3.525521
+    },
+    "address": {
+      "street": "2 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦782000 - ₦2640000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@templeschool.com",
+      "website": "https://templeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-73",
+    "name": "Grace Springs College 5",
+    "coordinates": {
+      "lat": 6.508224,
+      "lng": 3.500696
+    },
+    "address": {
+      "street": "87 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1148000 - ₦2606000",
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-74",
+    "name": "Imperial Lights College 5",
+    "coordinates": {
+      "lat": 6.568468,
+      "lng": 3.437062
+    },
+    "address": {
+      "street": "99 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1368000 - ₦2562000",
+    "facilities": [
+      "Sports Field",
+      "Boarding",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-75",
+    "name": "Pinefield Schools 5",
+    "coordinates": {
+      "lat": 6.631948,
+      "lng": 3.462596
+    },
+    "address": {
+      "street": "96 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-76",
+    "name": "Meadow Hall 5",
+    "coordinates": {
+      "lat": 6.512565,
+      "lng": 3.461023
+    },
+    "address": {
+      "street": "64 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦842000 - ₦2326000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-77",
+    "name": "Greensprings School 5",
+    "coordinates": {
+      "lat": 6.502545,
+      "lng": 3.506268
+    },
+    "address": {
+      "street": "35 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦591000 - ₦2366000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4.1,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-78",
+    "name": "Corona School 5",
+    "coordinates": {
+      "lat": 6.595327,
+      "lng": 3.430219
+    },
+    "address": {
+      "street": "15 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦1893000 - ₦2992000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-79",
+    "name": "Chrisland School 5",
+    "coordinates": {
+      "lat": 6.464772,
+      "lng": 3.569011
+    },
+    "address": {
+      "street": "30 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦808000 - ₦2174000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-80",
+    "name": "Dowen College 5",
+    "coordinates": {
+      "lat": 6.553711,
+      "lng": 3.542839
+    },
+    "address": {
+      "street": "2 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 870 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-81",
+    "name": "British International School 5",
+    "coordinates": {
+      "lat": 6.649405,
+      "lng": 3.443217
+    },
+    "address": {
+      "street": "23 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 820 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-82",
+    "name": "Lekki British School 5",
+    "coordinates": {
+      "lat": 6.526345,
+      "lng": 3.492913
+    },
+    "address": {
+      "street": "31 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦354000 - ₦2498000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Boarding",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-83",
+    "name": "Whitesands School 5",
+    "coordinates": {
+      "lat": 6.472928,
+      "lng": 3.438166
+    },
+    "address": {
+      "street": "82 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1562000 - ₦2890000",
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@whitesandsschool.com",
+      "website": "https://whitesandsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-84",
+    "name": "Grange School 5",
+    "coordinates": {
+      "lat": 6.497572,
+      "lng": 3.57184
+    },
+    "address": {
+      "street": "21 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Sports Field",
+      "Art Studio"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@grangeschool.com",
+      "website": "https://grangeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-85",
+    "name": "St. Saviours School 5",
+    "coordinates": {
+      "lat": 6.458412,
+      "lng": 3.562181
+    },
+    "address": {
+      "street": "91 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "facilities": [
+      "Music Room",
+      "Sports Field",
+      "Boarding"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@st.savioursschool.com",
+      "website": "https://st.savioursschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-86",
+    "name": "Children International School 5",
+    "coordinates": {
+      "lat": 6.616504,
+      "lng": 3.429834
+    },
+    "address": {
+      "street": "89 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "price_range": "₦891000 - ₦2772000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 3.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@childreninternationalschool.com",
+      "website": "https://childreninternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-87",
+    "name": "Riverbank School 5",
+    "coordinates": {
+      "lat": 6.635561,
+      "lng": 3.591996
+    },
+    "address": {
+      "street": "89 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1776000 - ₦2959000",
+    "facilities": [
+      "Tech Lab",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@riverbankschool.com",
+      "website": "https://riverbankschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-88",
+    "name": "Emerald Schools 5",
+    "coordinates": {
+      "lat": 6.464294,
+      "lng": 3.53719
+    },
+    "address": {
+      "street": "97 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 3.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@emeraldschools.com",
+      "website": "https://emeraldschools.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-89",
+    "name": "Rainbow College 5",
+    "coordinates": {
+      "lat": 6.490926,
+      "lng": 3.505591
+    },
+    "address": {
+      "street": "39 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "IB",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@rainbowcollege.com",
+      "website": "https://rainbowcollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-90",
+    "name": "Temple School 5",
+    "coordinates": {
+      "lat": 6.538242,
+      "lng": 3.561539
+    },
+    "address": {
+      "street": "5 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Sports Field"
+    ],
+    "rating": 3.7,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@templeschool.com",
+      "website": "https://templeschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-91",
+    "name": "Grace Springs College 6",
+    "coordinates": {
+      "lat": 6.483809,
+      "lng": 3.555457
+    },
+    "address": {
+      "street": "83 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦363000 - ₦2755000",
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 3.6,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 890 000 0000",
+      "email": "info@gracespringscollege.com",
+      "website": "https://gracespringscollege.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-92",
+    "name": "Imperial Lights College 6",
+    "coordinates": {
+      "lat": 6.467718,
+      "lng": 3.519273
+    },
+    "address": {
+      "street": "72 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1503000 - ₦2965000",
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 800 000 0000",
+      "email": "info@imperiallightscollege.com",
+      "website": "https://imperiallightscollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-93",
+    "name": "Pinefield Schools 6",
+    "coordinates": {
+      "lat": 6.642658,
+      "lng": 3.556925
+    },
+    "address": {
+      "street": "17 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "price_range": "₦1061000 - ₦2675000",
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Bus Service",
+      "Sick Bay"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@pinefieldschools.com",
+      "website": "https://pinefieldschools.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-94",
+    "name": "Meadow Hall 6",
+    "coordinates": {
+      "lat": 6.632216,
+      "lng": 3.443938
+    },
+    "address": {
+      "street": "69 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4.2,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 810 000 0000",
+      "email": "info@meadowhall.com",
+      "website": "https://meadowhall.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-95",
+    "name": "Greensprings School 6",
+    "coordinates": {
+      "lat": 6.622341,
+      "lng": 3.406433
+    },
+    "address": {
+      "street": "17 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦1151000 - ₦2287000",
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Library"
+    ],
+    "rating": 4.9,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 880 000 0000",
+      "email": "info@greenspringsschool.com",
+      "website": "https://greenspringsschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-96",
+    "name": "Corona School 6",
+    "coordinates": {
+      "lat": 6.581091,
+      "lng": 3.57102
+    },
+    "address": {
+      "street": "40 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦394000 - ₦2687000",
+    "curriculum": [
+      "Christian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Library"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@coronaschool.com",
+      "website": "https://coronaschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-97",
+    "name": "Chrisland School 6",
+    "coordinates": {
+      "lat": 6.600105,
+      "lng": 3.580177
+    },
+    "address": {
+      "street": "27 Random Street",
+      "lga": "Lekki",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "British",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Sports Field",
+      "Art Studio",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 840 000 0000",
+      "email": "info@chrislandschool.com",
+      "website": "https://chrislandschool.com"
+    },
+    "type": "Boarding",
+    "image": null
+  },
+  {
+    "id": "gmap-98",
+    "name": "Dowen College 6",
+    "coordinates": {
+      "lat": 6.495126,
+      "lng": 3.4746
+    },
+    "address": {
+      "street": "14 Random Street",
+      "lga": "Ikeja",
+      "state": "Lagos"
+    },
+    "curriculum": [
+      "Nigerian",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Art Studio",
+      "Sick Bay"
+    ],
+    "rating": 4.8,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 860 000 0000",
+      "email": "info@dowencollege.com",
+      "website": "https://dowencollege.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-99",
+    "name": "British International School 6",
+    "coordinates": {
+      "lat": 6.466254,
+      "lng": 3.57677
+    },
+    "address": {
+      "street": "60 Random Street",
+      "lga": "Victoria Island",
+      "state": "Lagos"
+    },
+    "price_range": "₦986000 - ₦2950000",
+    "curriculum": [
+      "American",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Swimming Pool",
+      "Music Room",
+      "Sports Field",
+      "Art Studio",
+      "Boarding",
+      "Bus Service",
+      "Sick Bay",
+      "Library"
+    ],
+    "rating": 4.3,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 850 000 0000",
+      "email": "info@britishinternationalschool.com",
+      "website": "https://britishinternationalschool.com"
+    },
+    "type": "Day",
+    "image": null
+  },
+  {
+    "id": "gmap-100",
+    "name": "Lekki British School 6",
+    "coordinates": {
+      "lat": 6.57845,
+      "lng": 3.506981
+    },
+    "address": {
+      "street": "65 Random Street",
+      "lga": "Surulere",
+      "state": "Lagos"
+    },
+    "price_range": "₦1683000 - ₦2256000",
+    "curriculum": [
+      "Montessori",
+      "Nigerian"
+    ],
+    "facilities": [
+      "Tech Lab",
+      "Music Room",
+      "Sports Field",
+      "Sick Bay"
+    ],
+    "rating": 3.5,
+    "verified": false,
+    "contact_info": {
+      "phone": "+234 830 000 0000",
+      "email": "info@lekkibritishschool.com",
+      "website": "https://lekkibritishschool.com"
+    },
+    "type": "Boarding",
+    "image": null
   }
 ]
