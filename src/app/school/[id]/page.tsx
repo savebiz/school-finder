@@ -109,7 +109,7 @@ export default function SchoolDetail() {
                                 <div className="glass-panel p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-3xl">
                                     <h3 className="text-white/50 uppercase tracking-widest text-sm font-bold mb-4">The Vibe</h3>
                                     <div className="flex flex-wrap gap-2">
-                                        {school.facilities.slice(0, 5).map(fac => (
+                                        {(school.facilities || []).slice(0, 5).map(fac => (
                                             <span key={fac} className="px-4 py-2 bg-white/10 rounded-full text-white font-medium border border-white/5">
                                                 ✨ {fac}
                                             </span>
