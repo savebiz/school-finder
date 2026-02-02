@@ -1,23 +1,21 @@
 
 'use client';
 
-
-
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import SchoolCard from '@/components/SchoolCard';
 import SchoolCardSkeleton from '@/components/SchoolCardSkeleton';
 import FilterSidebar from '@/components/FilterSidebar';
-import FilterChips from '@/components/FilterChips'; // We use this in the drawer head or separate
+import FilterChips from '@/components/FilterChips';
 import CompareTray from '@/components/CompareTray';
 import { useStore } from '@/store/useStore';
-import { MapPin, Filter, Menu } from 'lucide-react';
-import { motion, useAnimation, PanInfo, useDragControls } from 'framer-motion';
+import { Filter, Search, Sparkles } from 'lucide-react';
+import { motion, useAnimation, useDragControls } from 'framer-motion';
 
 // Dynamic import for Map to avoid SSR issues
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
-  loading: () => <div className="h-full w-full bg-gray-100 flex items-center justify-center text-gray-400">Loading Map...</div>
+  loading: () => <div className="h-full w-full bg-black flex items-center justify-center text-white/50">Loading Map...</div>
 });
 
 export default function Home() {
@@ -25,15 +23,10 @@ export default function Home() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Animation controls for the drawer
-  const controls = useAnimation();
-  const dragControls = useDragControls();
-  const [drawerState, setDrawerState] = useState<'collapsed' | 'half' | 'expanded'>('half');
-
   // Initial Fetch
   useEffect(() => {
     fetchSchools();
-    setLoading(false); // remove local loading
+    setLoading(false);
   }, [fetchSchools]);
 
   // Infinite Scroll
@@ -72,174 +65,119 @@ export default function Home() {
     setTimeout(() => applyFilters(), 0);
   };
 
-  // Drag End Logic for Drawer
-  const onDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    // Determine direction and velocity
-    const offset = info.offset.y;
-    const velocity = info.velocity.y;
-
-    if (velocity < -500 || offset < -100) {
-      // Dragged Up fast or far
-      if (drawerState === 'collapsed') {
-        setDrawerState('half');
-        controls.start({ y: '50vh' });
-      } else {
-        setDrawerState('expanded');
-        controls.start({ y: '10vh' }); // Nearly full screen
-      }
-    } else if (velocity > 500 || offset > 100) {
-      // Dragged Down fast or far
-      if (drawerState === 'expanded') {
-        setDrawerState('half');
-        controls.start({ y: '50vh' });
-      } else {
-        setDrawerState('collapsed');
-        controls.start({ y: '85vh' }); // Peek
-      }
-    } else {
-      // Snap back to current state if drag wasn't significant
-      const target = drawerState === 'expanded' ? '10vh' : drawerState === 'half' ? '50vh' : '85vh';
-      controls.start({ y: target });
-    }
-  };
-
-  // Initialize drawer position
-  useEffect(() => {
-    controls.start({ y: '50vh' });
-  }, [controls]);
-
-
   return (
-    <main className="flex h-screen w-screen overflow-hidden bg-gray-50 flex-col md:flex-row relative">
+    <main className="flex h-screen w-screen overflow-hidden bg-black flex-col relative text-white">
 
-      {/* Mobile Top Bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md p-4 shadow-sm z-20 flex justify-between items-center safe-area-top">
-        <h1 className="text-lg font-bold text-gray-900 flex items-center">
-          <img src="/school-finder-logo.png" alt="SchoolFinder" className="h-12 w-auto" />
-        </h1>
-        <button
-          onClick={() => setIsFilterOpen(true)}
-          className="p-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200"
-        >
-          <Filter className="w-5 h-5" />
-        </button>
+      {/* Background Map Layer */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
+        <MapComponent schools={filteredSchools} center={mapCenter} />
       </div>
 
-      {/* Filter Sidebar (Modal on mobile, Sidebar in design) */}
-      <FilterSidebar isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
+      {/* Floating Header & Search */}
+      <div className="absolute top-0 left-0 right-0 z-20 p-6 flex justify-between items-start pointer-events-none">
 
-      {/* Desktop Sidebar (List View) */}
-      <div className="hidden md:flex w-[400px] lg:w-[450px] flex-col h-full bg-white shadow-xl z-10 border-r border-gray-200">
-        <div className="p-5 border-b border-gray-100">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center tracking-tight">
-              <img src="/school-finder-logo.png" alt="SchoolFinder NG" className="h-20 w-auto" />
-            </h1>
+        {/* Brand */}
+        <div className="pointer-events-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-3"
+          >
+            <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold tracking-tight">SchoolFinder</h1>
+              <p className="text-xs text-white/50">Next Gen Discovery</p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Floating Search Pill */}
+        <div className="pointer-events-auto w-full max-w-lg mx-4 hidden md:block">
+          <div className="glass-panel rounded-full p-2 flex items-center shadow-2xl overflow-hidden group focus-within:ring-2 ring-emerald-500/50 transition-all">
+            <Search className="w-5 h-5 text-white/50 ml-3" />
+            <input
+              type="text"
+              placeholder="Search schools, area, or curriculum..."
+              className="bg-transparent border-none text-white placeholder-white/50 focus:ring-0 w-full px-4 py-2"
+            />
             <button
-              onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              title="Toggle Filters"
+              onClick={() => setIsFilterOpen(true)}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+              title="Filters"
             >
-              <Menu className="w-5 h-5 text-gray-600" />
+              <Filter className="w-5 h-5 text-white/70" />
             </button>
           </div>
-          <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
-
-          <p className="text-xs text-gray-400 mt-2 font-medium uppercase tracking-wider">{filteredSchools.length} schools available</p>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {loading && !isLoading ? (
-            <>
-              {[1, 2, 3, 4].map(i => <SchoolCardSkeleton key={i} />)}
-            </>
-          ) : (
-            <>
-              {filteredSchools.map(school => (
-                <div key={school.id} onClick={() => window.location.href = `/school/${school.id}`}>
-                  <SchoolCard school={school} />
-                </div>
-              ))}
-
-              {/* Infinite Scroll Loader */}
-              <div ref={loaderRef} className="py-8 text-center">
-                {isLoading && (
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
-                )}
-                {!isLoading && nextPageToken && (
-                  <p className="text-gray-400 text-sm">Scroll for more</p>
-                )}
-                {filteredSchools.length === 0 && !isLoading && (
-                  <div className="text-center py-20">
-                    <div className="bg-gray-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                      <Filter className="w-8 h-8 text-gray-300" />
-                    </div>
-                    <h3 className="text-gray-900 font-bold mb-1">No schools found</h3>
-                    <p className="text-gray-500 text-sm">Try adjusting your filters</p>
-                  </div>
-                )}
-              </div>
-            </>
-          )}
+        {/* Mobile Filter Toggle */}
+        <div className="pointer-events-auto md:hidden">
+          <button
+            onClick={() => setIsFilterOpen(true)}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white"
+          >
+            <Filter className="w-5 h-5" />
+          </button>
         </div>
       </div>
 
-      {/* Mobile Bottom Drawer / List (Draggable) */}
-      <motion.div
-        animate={controls}
-        initial={{ y: '50vh' }}
-        drag="y"
-        dragControls={dragControls}
-        dragListener={false} // Disable global drag listener, only enable via controls
-        dragConstraints={{ top: 0, bottom: 0 }}
-        dragElastic={0.2}
-        onDragEnd={onDragEnd}
-        className="md:hidden fixed top-0 left-0 right-0 h-[100vh] bg-white rounded-t-2xl shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.1)] z-10 flex flex-col"
-        style={{ touchAction: 'none' }}
-      >
-        {/* Handle Bar */}
-        <div
-          className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing"
-          onPointerDown={(e) => dragControls.start(e)}
-          onClick={() => {
-            // Simple toggle logic on click if not dragging
-            if (drawerState === 'collapsed') {
-              setDrawerState('half');
-              controls.start({ y: '50vh' });
-            } else if (drawerState === 'half') {
-              setDrawerState('expanded');
-              controls.start({ y: '10vh' });
-            } else {
-              setDrawerState('half');
-              controls.start({ y: '50vh' });
-            }
-          }}
-        >
-          <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
-        </div>
+      {/* Filter Sidebar (Drawer) */}
+      <FilterSidebar isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
 
-        <div className="px-4 py-2 border-b border-gray-100">
-          <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
-        </div>
+      {/* Floating School List (Desktop: Left Rail) */}
+      <div className="absolute left-6 top-32 bottom-24 w-[400px] hidden md:flex flex-col z-10 pointer-events-none">
+        {/* Glass Container */}
+        <div className="flex-1 glass-panel rounded-3xl overflow-hidden pointer-events-auto flex flex-col border border-white/10 shadow-2xl">
+          <div className="p-5 border-b border-white/10 bg-white/5 backdrop-blur-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold">Nearby Schools</h2>
+              <span className="text-xs font-mono bg-white/10 px-2 py-1 rounded text-white/70">{filteredSchools.length} FOUND</span>
+            </div>
+            <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
+          </div>
 
-        <div className="flex-1 overflow-y-auto p-4 pb-32">
-          {loading ? (
-            <>
-              {[1, 2, 3].map(i => <SchoolCardSkeleton key={i} />)}
-            </>
-          ) : (
-            filteredSchools.map(school => (
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
+            {loading && !isLoading ? (
+              <>
+                {[1, 2, 3].map(i => <div key={i} className="h-64 rounded-2xl bg-white/5 animate-pulse" />)}
+              </>
+            ) : (
+              <>
+                {filteredSchools.map(school => (
+                  <div key={school.id} onClick={() => window.location.href = `/school/${school.id}`}>
+                    <SchoolCard school={school} />
+                  </div>
+                ))}
+
+                {/* Load More */}
+                <div ref={loaderRef} className="py-8 text-center">
+                  {isLoading && <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-400"></div>}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Bottom Sheet (Draggable) */}
+      <div className="md:hidden absolute bottom-0 left-0 right-0 h-[60vh] z-10 pointer-events-none">
+        <div className="h-full w-full glass-panel rounded-t-3xl pointer-events-auto flex flex-col pt-2 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+          <div className="w-12 h-1.5 bg-white/20 rounded-full mx-auto mb-2 mt-2" />
+          <div className="px-4 py-2 overflow-x-auto">
+            <FilterChips onFilterChange={handleQuickFilter} activeFilters={filters} />
+          </div>
+
+          <div className="flex-1 overflow-y-auto p-4 pb-24">
+            {filteredSchools.map(school => (
               <div key={school.id} onClick={() => window.location.href = `/school/${school.id}`}>
                 <SchoolCard school={school} />
               </div>
-            ))
-          )}
+            ))}
+          </div>
         </div>
-      </motion.div>
-
-      {/* Map View (Full screen on mobile) */}
-      <div className="absolute inset-0 md:relative md:flex-1 h-full w-full z-0">
-        <MapComponent schools={filteredSchools} center={mapCenter} />
       </div>
 
       <CompareTray />
