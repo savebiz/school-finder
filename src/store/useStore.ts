@@ -18,12 +18,16 @@ interface AppState {
     filters: FilterState;
 
     compareList: School[];
+    favorites: School[]; // [NEW]
     toggleCompare: (school: School) => void;
     clearCompare: () => void;
+    toggleFavorite: (school: School) => void; // [NEW]
 
     // API State
     isLoading: boolean;
     nextPageToken: string | null;
+    searchQuery: string; // [NEW]
+    setSearchQuery: (query: string) => void; // [NEW]
     fetchSchools: (isLoadMore?: boolean) => Promise<void>;
 
     setSchools: (schools: School[]) => void;
@@ -46,11 +50,15 @@ export const useStore = create<AppState>((set, get) => ({
     filteredSchools: [],
     filters: initialFilters,
     compareList: [],
+    favorites: [], // [NEW]
     isLoading: false,
     nextPageToken: null,
+    searchQuery: '', // [NEW]
+
+    setSearchQuery: (query) => set({ searchQuery: query }), // [NEW]
 
     fetchSchools: async (isLoadMore = false) => {
-        const { nextPageToken, schools } = get();
+        const { nextPageToken, searchQuery } = get(); // [MODIFIED]
         if (isLoadMore && !nextPageToken) return;
 
         set({ isLoading: true });
@@ -58,6 +66,7 @@ export const useStore = create<AppState>((set, get) => ({
         try {
             const params = new URLSearchParams();
             if (isLoadMore && nextPageToken) params.append('pagetoken', nextPageToken);
+            if (searchQuery) params.append('query', searchQuery); // [NEW]
 
             const res = await fetch(`/api/places?${params.toString()}`);
 
@@ -106,6 +115,16 @@ export const useStore = create<AppState>((set, get) => ({
     },
 
     clearCompare: () => set({ compareList: [] }),
+
+    toggleFavorite: (school) => { // [NEW]
+        const { favorites } = get();
+        const exists = favorites.find(s => s.id === school.id);
+        if (exists) {
+            set({ favorites: favorites.filter(s => s.id !== school.id) });
+        } else {
+            set({ favorites: [...favorites, school] });
+        }
+    },
 
     setFilter: (key, value) => {
         set((state) => ({

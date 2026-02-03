@@ -1,16 +1,19 @@
 
 import React, { useRef, useState } from 'react';
-import { MapPin, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
+import { MapPin, ShieldCheck, Zap, MessageCircle, Heart } from 'lucide-react';
 import { School } from '@/types';
 import CompareToggle from './CompareToggle';
 import StarRating from './StarRating';
 import { motion } from 'framer-motion';
+import { useStore } from '@/store/useStore';
 
 interface SchoolCardProps {
   school: any;
 }
 
 const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
+  const { toggleFavorite, favorites } = useStore();
+  const isFavorite = favorites.some(s => s.id === school.id);
   const imageUrl = school.image || `https://placehold.co/600x400/e2e8f0/475569?text=${encodeURIComponent(school.name)}`;
 
   // 3D Tilt Logic
@@ -76,7 +79,16 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
             {school.price_range}
           </div>
 
-          <div className="absolute top-3 right-3 z-10">
+          <div className="absolute top-3 right-3 z-10 flex gap-2">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleFavorite(school);
+              }}
+              className={`p-2 rounded-full backdrop-blur-md border transition-all duration-300 ${isFavorite ? 'bg-red-500 text-white border-red-400' : 'bg-black/40 text-white/70 border-white/10 hover:bg-white/20'}`}
+            >
+              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-current' : ''}`} />
+            </button>
             <CompareToggle school={school} />
           </div>
         </div>

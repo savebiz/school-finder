@@ -19,7 +19,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function Home() {
-  const { filteredSchools, filters, setFilter, applyFilters, fetchSchools, isLoading, nextPageToken } = useStore();
+  const { filteredSchools, filters, setFilter, applyFilters, fetchSchools, isLoading, nextPageToken, setSearchQuery } = useStore();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -102,11 +102,19 @@ export default function Home() {
               type="text"
               placeholder="Search schools, area, or curriculum..."
               className="bg-transparent border-none text-white placeholder-white/50 focus:ring-0 w-full px-4 py-2"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setSearchQuery(e.currentTarget.value);
+                  fetchSchools();
+                }
+              }}
+              defaultValue={useStore.getState().searchQuery}
             />
             <button
-              onClick={() => setIsFilterOpen(true)}
+              onClick={() => {
+                fetchSchools();
+              }}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
-              title="Filters"
             >
               <Filter className="w-5 h-5 text-white/70" />
             </button>
