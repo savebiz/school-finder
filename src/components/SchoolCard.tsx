@@ -96,22 +96,22 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
         {/* Content */}
         <div className="p-5 text-white">
           <div className="flex justify-between items-start mb-2">
-            <h3 className="font-bold text-xl leading-tight tracking-tight drop-shadow-md">{school.name}</h3>
+            <h3 className="font-bold text-xl leading-tight tracking-tight drop-shadow-md line-clamp-1 mr-2">{school.name}</h3>
           </div>
 
-          <div className="flex items-center text-gray-300 text-xs mb-4">
-            <MapPin className="w-3 h-3 mr-1 text-emerald-400" />
-            <span>{school.address.lga}, {school.address.state}</span>
+          <div className="flex items-center text-gray-300 text-xs mb-4 font-medium tracking-wide">
+            <MapPin className="w-3 h-3 mr-1 text-emerald-400 drop-shadow-sm" />
+            <span className="truncate">{school.address.lga}, {school.address.state}</span>
           </div>
 
           {/* Facilities / Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
             {school.facilities.includes('Generator/Solar') && (
-              <span className="inline-flex items-center px-2 py-1 rounded-md text-[10px] uppercase font-bold tracking-wider bg-amber-500/20 text-amber-200 border border-amber-500/30">
+              <span className="inline-flex items-center px-2 py-1 rounded-md text-[10px] uppercase font-bold tracking-wider bg-amber-500/20 text-amber-200 border border-amber-500/30 shadow-sm">
                 <Zap className="w-3 h-3 mr-1" /> Solar
               </span>
             )}
-            <span className="inline-flex items-center px-2 py-1 rounded-md text-[10px] uppercase font-bold tracking-wider bg-blue-500/20 text-blue-200 border border-blue-500/30">
+            <span className="inline-flex items-center px-2 py-1 rounded-md text-[10px] uppercase font-bold tracking-wider bg-blue-500/20 text-blue-200 border border-blue-500/30 shadow-sm">
               {school.type}
             </span>
           </div>
@@ -120,8 +120,8 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
           <div className="mt-2 flex items-center justify-between gap-3 pt-3 border-t border-white/10">
             <div className="flex flex-col">
               <div className="flex items-center gap-1">
-                <span className="text-2xl font-bold text-white leading-none">{school.rating || 'N/A'}</span>
-                <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Rating</span>
+                <span className="text-2xl font-bold text-white leading-none drop-shadow-sm">{school.rating || 'N/A'}</span>
+                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Rating</span>
               </div>
               <StarRating rating={school.rating || 0} size={14} />
             </div>
@@ -130,7 +130,7 @@ const SchoolCard: React.FC<SchoolCardProps> = ({ school }) => {
               href={`https://wa.me/${school.contact_info.phone.replace(/[^0-9]/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-button px-5 py-2.5 rounded-xl text-sm font-bold text-white flex items-center group/btn"
+              className="glass-button px-5 py-2.5 rounded-xl text-sm font-bold text-white flex items-center group/btn shadow-lg shadow-emerald-900/20 hover:bg-emerald-600/20 hover:border-emerald-500/50"
               onClick={(e) => e.stopPropagation()}
             >
               <MessageCircle className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />

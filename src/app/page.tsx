@@ -70,8 +70,9 @@ export default function Home() {
 
       {/* Background Map Layer */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
         <MapComponent schools={filteredSchools} center={mapCenter} />
+        {/* Cinematic Vignette */}
+        <div className="absolute inset-0 map-vignette z-10" />
       </div>
 
       {/* Floating Header & Search */}
@@ -84,24 +85,24 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+            <div className="w-12 h-12 rounded-2xl glass-panel flex items-center justify-center border border-white/20 shadow-lg shadow-emerald-500/20">
+              <Sparkles className="w-6 h-6 text-emerald-400 fill-emerald-400/20" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">SchoolFinder</h1>
-              <p className="text-xs text-white/50">Next Gen Discovery</p>
+              <h1 className="text-2xl font-bold tracking-tight text-white drop-shadow-md">SchoolFinder</h1>
+              <p className="text-xs text-white/70 font-medium tracking-wide">Next Gen Discovery</p>
             </div>
           </motion.div>
         </div>
 
-        {/* Floating Search Pill */}
-        <div className="pointer-events-auto w-full max-w-lg mx-4 hidden md:block">
-          <div className="glass-panel rounded-full p-2 flex items-center shadow-2xl overflow-hidden group focus-within:ring-2 ring-emerald-500/50 transition-all">
-            <Search className="w-5 h-5 text-white/50 ml-3" />
+        {/* Floating Search Pill - Pro Max */}
+        <div className="pointer-events-auto w-full max-w-xl mx-4 hidden md:block">
+          <div className="glass-panel rounded-full p-2 flex items-center shadow-2xl overflow-hidden group focus-within:ring-2 ring-emerald-500/50 transition-all border border-white/10 bg-black/40 backdrop-blur-2xl">
+            <Search className="w-5 h-5 text-white/50 ml-4" />
             <input
               type="text"
               placeholder="Search schools, area, or curriculum..."
-              className="bg-transparent border-none text-white placeholder-white/50 focus:ring-0 w-full px-4 py-2"
+              className="bg-transparent border-none text-white placeholder-white/50 focus:ring-0 w-full px-4 py-3 text-lg font-medium"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   setSearchQuery(e.currentTarget.value);
@@ -114,9 +115,9 @@ export default function Home() {
               onClick={() => {
                 fetchSchools();
               }}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+              className="p-3 mr-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
             >
-              <Filter className="w-5 h-5 text-white/70" />
+              <Filter className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -125,9 +126,9 @@ export default function Home() {
         <div className="pointer-events-auto md:hidden">
           <button
             onClick={() => setIsFilterOpen(true)}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white"
+            className="w-12 h-12 rounded-full glass-panel border border-white/20 flex items-center justify-center text-white shadow-lg"
           >
-            <Filter className="w-5 h-5" />
+            <Filter className="w-6 h-6" />
           </button>
         </div>
       </div>
