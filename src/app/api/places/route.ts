@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { School } from '@/types';
 
-const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_KEY;
+const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_KEY || process.env.NEXT_PUBLIC_GOOGLE_PLACES_KEY;
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);

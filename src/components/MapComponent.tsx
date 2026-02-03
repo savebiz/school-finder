@@ -1,97 +1,186 @@
-
 'use client';
 
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
-import L from 'leaflet';
+import React, { useCallback, useMemo, useState } from 'react';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { School } from '@/types';
+import { useGeolocation } from '@/hooks/useGeolocation';
+import { Locate } from 'lucide-react';
 
-// Fix for default marker icons in Next.js
-const iconUrl = 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png';
-const iconRetinaUrl = 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png';
-const shadowUrl = 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png';
+const containerStyle = {
+    width: '100%',
+    height: '100%'
+};
 
-// Define custom icon logic
-const defaultIcon = L.icon({
-    iconUrl: iconUrl,
-    iconRetinaUrl: iconRetinaUrl,
-    shadowUrl: shadowUrl,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    tooltipAnchor: [16, -28],
-    shadowSize: [41, 41]
-});
+// Dark Mode Map Style
+const mapOptions = {
+    disableDefaultUI: true,
+    zoomControl: false,
+    mapTypeControl: false,
+    streetViewControl: false,
+    styles: [
+        { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+        {
+            featureType: "administrative.locality",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+        },
+        {
+            featureType: "poi",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+        },
+        {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{ color: "#263c3f" }],
+        },
+        {
+            featureType: "poi.park",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#6b9a76" }],
+        },
+        {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{ color: "#38414e" }],
+        },
+        {
+            featureType: "road",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#212a37" }],
+        },
+        {
+            featureType: "road",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#9ca5b3" }],
+        },
+        {
+            featureType: "road.highway",
+            elementType: "geometry",
+            stylers: [{ color: "#746855" }],
+        },
+        {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#1f2835" }],
+        },
+        {
+            featureType: "road.highway",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#f3d19c" }],
+        },
+        {
+            featureType: "transit",
+            elementType: "geometry",
+            stylers: [{ color: "#2f3948" }],
+        },
+        {
+            featureType: "transit.station",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+        },
+        {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#17263c" }],
+        },
+        {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#515c6d" }],
+        },
+        {
+            featureType: "water",
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#17263c" }],
+        },
+    ],
+};
 
-
-// Component to handle map center updates
-function ChangeView({ center }: { center: [number, number] }) {
-    const map = useMap();
-    useEffect(() => {
-        map.setView(center);
-    }, [center, map]);
-    return null;
+interface MapComponentProps {
+    schools: School[];
+    center: [number, number];
 }
 
-const MapComponent = ({ schools, center }: { schools: any[], center: [number, number] }) => {
+const MapComponent: React.FC<MapComponentProps> = ({ schools, center }) => {
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_PLACES_KEY || ''
+    });
+
+    const [map, setMap] = useState<google.maps.Map | null>(null);
+
+    const onLoad = useCallback(function callback(map: google.maps.Map) {
+        setMap(map);
+    }, []);
+
+    const onUnmount = useCallback(function callback(map: google.maps.Map) {
+        setMap(null);
+    }, []);
+
+    // Sync center when it changes
+    React.useEffect(() => {
+        if (map) {
+            map.panTo({ lat: center[0], lng: center[1] });
+        }
+    }, [center, map]);
+
+    const mapCenter = useMemo(() => ({ lat: center[0], lng: center[1] }), [center]);
+
+    if (!isLoaded) return <div className="h-full w-full bg-black/90 flex items-center justify-center text-white/50">Loading Google Maps...</div>;
 
     return (
-        <div className="h-full w-full z-0 relative">
-            <MapContainer center={center} zoom={13} scrollWheelZoom={true} className="h-full w-full">
-                <ChangeView center={center} />
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+        <div className="h-full w-full relative">
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={mapCenter}
+                zoom={13}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
+                options={mapOptions}
+            >
                 {schools.map((school) => (
                     <Marker
                         key={school.id}
-                        position={[school.coordinates.lat, school.coordinates.lng]}
-                        icon={defaultIcon}
-                    >
-                        <Popup>
-                            <div className="p-1">
-                                <h3 className="font-bold text-sm mb-1">{school.name}</h3>
-                                <p className="text-xs text-gray-500">{school.address.lga}</p>
-                                <p className="text-xs font-semibold text-emerald-600 mt-1">{school.price_range}</p>
-                                <a href={`/school/${school.id}`} className="block mt-2 text-xs text-blue-600 hover:underline">
-                                    View Details
-                                </a>
-                            </div>
-                        </Popup>
-                    </Marker>
+                        position={{ lat: school.coordinates.lat, lng: school.coordinates.lng }}
+                        title={school.name}
+                        // You can add onClick handlers here to open info windows or navigate
+                        onClick={() => window.location.href = `/school/${school.id}`}
+                    />
                 ))}
-                <LocateControl />
-            </MapContainer>
+
+                <LocateControl map={map} />
+            </GoogleMap>
         </div>
     );
 };
 
-// Inner component to access map context and handle geolocation
-import { useGeolocation } from '@/hooks/useGeolocation';
-import { Locate } from 'lucide-react';
-
-function LocateControl() {
-    const map = useMap();
+// Locate Control
+function LocateControl({ map }: { map: google.maps.Map | null }) {
     const { location, loading, requestLocation } = useGeolocation();
 
-    useEffect(() => {
-        if (location) {
-            map.flyTo([location.lat, location.lng], 14);
+    React.useEffect(() => {
+        if (location && map) {
+            map.panTo({ lat: location.lat, lng: location.lng });
+            map.setZoom(14);
         }
     }, [location, map]);
 
     return (
-        <div className="leaflet-bottom leaflet-right">
-            <div className="leaflet-control leaflet-bar">
-                <button
-                    onClick={requestLocation}
-                    className="bg-white p-2 hover:bg-gray-100 flex items-center justify-center w-10 h-10 shadow-md border-2 border-gray-300 rounded-sm"
-                    title="Find Near Me"
-                >
-                    {loading ? <span className="animate-spin h-4 w-4 border-2 border-emerald-600 rounded-full border-t-transparent"></span> : <Locate className="w-5 h-5 text-gray-700" />}
-                </button>
-            </div>
+        <div className="absolute bottom-6 right-6 z-10">
+            <button
+                onClick={requestLocation}
+                className="bg-white p-3 hover:bg-gray-100 flex items-center justify-center rounded-full shadow-lg transition-transform hover:scale-105"
+                title="Find Near Me"
+            >
+                {loading ? (
+                    <span className="animate-spin h-5 w-5 border-2 border-emerald-600 rounded-full border-t-transparent"></span>
+                ) : (
+                    <Locate className="w-5 h-5 text-gray-700" />
+                )}
+            </button>
         </div>
     );
 }
